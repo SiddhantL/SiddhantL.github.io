@@ -30,13 +30,13 @@ I believe in continuously learning, iterating, and shipping things that have a r
 
 ## 🌐 Live Website
 
-[Visit my portfolio here →](https://siddhantlad.info)
+[Visit my portfolio here](https://siddhantlad.info)
 
 ---
 
 ## ✨ Acknowledgements
 The portfolio is made with the help of the [Astro](https://github.com/withastro/astro/tree/main/examples/portfolio) template.
-I've modified it significantly to better align with my style, projects, and professional focus.
+I've modified it to better align with my style, projects, and professional focus.
 
 ## 📫 Contact
 Feel free to connect with me:
