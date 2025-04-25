@@ -1,30 +1,48 @@
-# Astro Starter Kit: Portfolio
+# 📚 Siddhant Lad — Portfolio Website
 
-```sh
-npm create astro@latest -- --template portfolio
-```
+Welcome to the personal portfolio of **Siddhant Lad** — a Computer Science Master's student at **UC San Diego**, passionate about building, researching, and designing impactful software systems.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+This website highlights selected projects, technical skills, research experiences, and more.  
+It is designed to serve as both a showcase and a dynamic platform to evolve alongside my career.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+## 🚀 About Me
 
-## 🧞 Commands
+I'm a developer and researcher passionate about AI/ML, systems design, and rapid prototyping.  
+Currently pursuing my **Master's in Computer Science** at **UC San Diego**, I thrive at the intersection of technology, creativity, and real-world application.
 
-All commands are run from the root of the project, from a terminal:
+Over the years, I've worked on projects ranging from machine learning research and mobile app development to cloud-integrated IoT systems.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+I believe in continuously learning, iterating, and shipping things that have a real-world impact.
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🛠️ Tech Stack
+
+- **Astro**
+- **TypeScript**, **JavaScript**
+- **HTML**, **CSS**, **TailwindCSS**
+- **Iconify** for scalable icons
+- **GitHub Pages** for deployment
+
+---
+
+## 🌐 Live Website
+
+[Visit my portfolio here →](https://siddhantlad.info)
+
+---
+
+## ✨ Acknowledgements
+The portfolio is made with the help of the [Astro](https://github.com/withastro/astro/tree/main/examples/portfolio) template.
+I've modified it significantly to better align with my style, projects, and professional focus.
+
+## 📫 Contact
+Feel free to connect with me:
+
+- 📧 Email: siddhantnlad@gmail.com
+
+- 🌎 Website: siddhantlad.info
+
+- 🔗 LinkedIn: linkedin.com/in/siddhantlad
