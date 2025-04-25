@@ -1,0 +1,273 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	project: CollectionEntry<'work'>;
+}
+
+const { data, id } = Astro.props.project;
+---
+
+<div class="project-card">
+  <a class="overlay-link" href={`/work/${id}`} aria-label={`View project ${data.title}`}></a>
+
+  <img src={data.img} alt={data.img_alt || data.title} crossorigin="anonymous" loading="lazy" />
+
+  <!-- Tags and Skills: move outside the container that hides on hover -->
+  <div class="always-visible-meta">
+    <div class="skills">
+      {Array.isArray(data.skills) && data.skills.length > 0 &&
+        data.skills.map((skill) => <iconify-icon class="iconify" icon={skill} />)}
+    </div>
+    <div class="tag-pills">
+	 <div class="mobile-tags">
+      {data.tags?.map(tag => <span class="pill">{tag}</span>)}
+	  </div>
+    </div>
+  </div>
+
+  <!-- Only description and buttons slide up -->
+  <div class="description-container">
+    <h2 class="card-title">{data.title}</h2>
+    <div class="description">
+      <p>{data.description}</p>
+      <div class="buttons">
+        {data.repo && (
+          <a href={data.repo} target="_blank" rel="noopener noreferrer" class="z-10">
+            <span>GitHub <iconify-icon icon="mdi:github" /></span>
+          </a>
+        )}
+        {data.demo && (
+          <a href={data.demo} target="_blank" rel="noopener noreferrer" class="z-10">
+            <span>Demo <iconify-icon icon="mdi:open-in-new" /></span>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.always-visible-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+  .project-card {
+    position: relative;
+    width: 100%;
+    height: 11rem;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #000;
+  }
+
+  @media (min-width: 50em) {
+    .project-card {
+      height: 22rem;
+      border-radius: 1.5rem;
+    }
+	
+  }
+
+.overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 10; /* must be above all other elements */
+}
+.project-card * {
+  pointer-events: none; /* disable clicks on child elements */
+}
+.project-card .overlay-link {
+  pointer-events: auto; /* only enable click on this */
+}
+
+  .project-card img {
+    object-fit: cover;
+    object-position: center 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .description-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    transition: 0.35s;
+    background: #231724bd;
+    transform: translateY(63%);
+    padding-top: 15px;
+    transition-property: transform, padding-top;
+    color: var(--on-primary);
+    z-index: 2;
+  }
+
+  .project-card:hover .description-container {
+    transform: translateY(0%);
+    padding-top: 4rem;
+  }
+
+  .card-title {
+    position: absolute;
+    display: block;
+    width: max-content;
+    top: 0.9px;
+    padding: 4px 22px;
+    font-size: var(--text-title);
+    font-weight: 500;
+    background: #0008;
+    backdrop-filter: blur(10px);
+    z-index: 3;
+    transform: translateY(-100%);
+    border-radius: 0 8px 0 0;
+    transition-duration: 0.35s;
+    transition-property: background, transform;
+  }
+
+  .project-card:hover .card-title {
+    transform: translateY(11%);
+    backdrop-filter: none;
+    background: #0000;
+  }
+
+ .description {
+  padding: 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.description p {
+  font-size: var(--text-medium);
+  flex: 1;
+  min-height: 1.5rem;
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* On hover: allow scrolling */
+.project-card:hover .description p {
+  overflow-y: auto;
+  white-space: normal;
+  text-overflow: unset;
+  padding-right: 6px;
+}
+
+/* Optional: visible scrollbar only on hover */
+.project-card:hover .description p::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-card:hover .description p::-webkit-scrollbar-thumb {
+  background: var(--primary, #888);
+  border-radius: 4px;
+}
+
+.project-card:hover .description p::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+  .skills {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+  }
+.tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background-color: #ffffff22;
+  color: #fff;
+  padding: 2px 12px;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+}
+
+  .buttons {
+    padding: 14px;
+    width: 100%;
+    height: 47px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: var(--text-button);
+    z-index: 3;
+  }
+
+  .buttons a {
+    position: relative;
+    z-index: 3;
+  }
+
+  .buttons a:hover {
+    color: var(--primary-80);
+  }
+
+  .buttons a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    transform-origin: 0 0;
+    transform: scale(0);
+    background: var(--primary);
+    transition: 0.35s transform;
+  }
+
+  .buttons a:hover::after {
+    transform: scale(1);
+  }
+
+  .buttons a span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  iconify-icon {
+  font-size: 2rem;
+  color: white;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+@media (max-width: 49.99em) {
+  .project-card .skills {
+    display: none !important;
+    }
+  .description{
+    margin-top:-2mm !important;
+  }
+  .card-title{
+  font-size:0.9rem !important;
+  padding: 2 !important;
+  }
+}
+</style>
