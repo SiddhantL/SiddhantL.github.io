@@ -15,7 +15,10 @@
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
 	--gray-999: #ffffff;
-
+	--card-title-background: #9b9b9b70;
+	--description-container: #9b9b9bbd;
+	--section-header: #535353;
+	--pill-background: #00000022;
 	--accent-light: #c561f6;
 	--accent-regular: #7611a6;
 	--accent-dark: #1c0056;
@@ -92,6 +95,10 @@
 	--gray-999-basis: 225, 31%, 5%;
 	--gray-999: #090b11;
 
+	--card-title-background: #0008;
+	--description-container: #231724bd;
+	--pill-background: #ffffff22;
+	--section-header: #aaa;
 	--accent-light: #1c0056;
 	--accent-regular: #7611a6;
 	--accent-dark: #c561f6;

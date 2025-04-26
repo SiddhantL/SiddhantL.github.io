@@ -67,7 +67,7 @@ const { data, id } = Astro.props.project;
     max-width: 100%;
     overflow: hidden;
     border-radius: 0.75rem;
-    background: #000;
+    background: var(--background-primary);
   }
 
   @media (min-width: 50em) {
@@ -95,7 +95,7 @@ const { data, id } = Astro.props.project;
     object-position: center 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: var(--background-primary);
   }
 
   .description-container {
@@ -106,7 +106,7 @@ const { data, id } = Astro.props.project;
     width: 100%;
     top: 0;
     transition: 0.35s;
-    background: #231724bd;
+    background: var(--description-container);
     transform: translateY(63%);
     padding-top: 15px;
     transition-property: transform, padding-top;
@@ -127,7 +127,7 @@ const { data, id } = Astro.props.project;
     padding: 4px 22px;
     font-size: var(--text-title);
     font-weight: 500;
-    background: #0008;
+    background: var(--card-title-background);
     backdrop-filter: blur(10px);
     z-index: 3;
     transform: translateY(-100%);
@@ -197,12 +197,13 @@ const { data, id } = Astro.props.project;
 }
 
 .pill {
-  background-color: #ffffff22;
+  background-color: var(--pill-background);
   color: #fff;
   padding: 2px 12px;
   font-size: 0.75rem;
   border-radius: 9999px;
   font-weight: 500;
+  margin-right:3px;
   line-height: 1.25rem;
   white-space: nowrap;
 }
@@ -253,7 +254,7 @@ const { data, id } = Astro.props.project;
 
   iconify-icon {
   font-size: 2rem;
-  color: white;
+  color: var(--gray-color);
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
