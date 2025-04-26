@@ -22,7 +22,7 @@ skills:
 
 FireStack is a productivity dashboard web app designed to help students manage their academic and career goals. It centralizes deadlines, to-dos, event calendars, and goal tracking into a responsive, easy-to-navigate interface.
 
-The app was built using React for the frontend and Node.js with Express for the backend. I implemented full user auth, role-based access control, and modularized the backend into microservices — separating the calendar, notification, and task modules.
+The app was built using React for the frontend and Flask for the backend. I implemented full user auth, role-based access control, and modularized the backend into microservices — separating the calendar, notification, and task modules.
 
 Students could create recurring deadlines, sync with external calendars, and get reminders before key events. The app also included a “career mode” feature with resume upload, interview tracker, and resource bookmarking.
 

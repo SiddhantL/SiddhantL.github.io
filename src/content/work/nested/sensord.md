@@ -25,4 +25,4 @@ The game, developed in Java using the Android SDK, focused on dynamic difficulty
 
 On the hardware side, careful signal calibration ensured real-time responsiveness of physical inputs. I implemented a debounce logic and wrote serial parsers to interpret commands efficiently on the mobile side. The most satisfying part was watching players physically turn the dial and push buttons to control the digital car, bridging the digital and tactile worlds.
 
-Sensor’D was showcased during my undergrad capstone expo and received praise for its “arcade-like authenticity.” It taught me how to prototype interactive systems under time constraints, how to troubleshoot cross-platform Bluetooth issues, and how to design for fun — all while maintaining robustness and polish in execution.
+Sensor’D was showcased during my undergrad IoT competition and received first place and praise for its “arcade-like authenticity.” It taught me how to prototype interactive systems under time constraints, how to troubleshoot cross-platform Bluetooth issues, and how to design for fun — all while maintaining robustness and polish in execution.

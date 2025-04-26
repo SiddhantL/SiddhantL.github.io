@@ -23,6 +23,6 @@ As part of a university initiative, I conducted black-box penetration testing of
 
 Within a few weeks, I discovered critical flaws allowing for unauthorized grade modification, attendance editing, and full access to student profiles — all without admin credentials. I created a detailed vulnerability report outlining CVSS scores, risk tiers, exploit paths, and immediate remediation steps.
 
-Using tools like Nmap, Nessus, and custom Python scripts, I reverse engineered hidden endpoints and escalated to file upload privileges. I submitted PoCs and walkthroughs to university IT and was invited to present the findings to the Vice Chancellor and central IT team.
+Using tools like Nmap, Burp Suite, Nessus, and custom Python scripts, I reverse engineered hidden endpoints and escalated to file upload privileges. I submitted PoCs and walkthroughs to university IT and was invited to present the findings to the Vice Chancellor and central IT team.
 
 The result was a full system overhaul and tighter session controls across the portal. This experience gave me real-world exposure to offensive security and vulnerability disclosure — and the satisfaction of seeing my recommendations implemented in production.

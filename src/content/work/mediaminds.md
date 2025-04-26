@@ -24,6 +24,6 @@ MediaMinds was my final-year capstone, focused on automating video generation fr
 
 We used Flan-T5 for summarization, Selenium to scrape relevant context and image tags, and Stable Diffusion 1.5 to generate visuals frame-by-frame. For audio, we used Google TTS and a custom fine-tuned RVC voice model to narrate content. All assets were aligned using Mutagen and stitched together via FFMPEG with precise frame-level timing.
 
-The pipeline generated 90-second videos in under 3 minutes — a 35% improvement over traditional scripted workflows. We built a React-based frontend to manage inputs, view drafts, and manually tweak generated frames.
+The pipeline generated 90-second videos in under 3 minutes — a significant improvement over traditional scripted workflows. We built a React-based frontend to manage inputs, view drafts, and manually tweak generated frames.
 
 This project taught me how to coordinate multi-modal generative AI workflows, optimize media pipelines, and make complex systems user-friendly. It pushed the boundaries of what generative AI can do for solo and small-team creators.
