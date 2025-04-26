@@ -1,7 +1,7 @@
 ---
 title: University System Security Testing
 publishDate: 2022-08-01 00:00:00
-img: /assets/stock-4.jpg
+img: /assets/ethical.png
 img_alt: A system terminal showing network vulnerability scan results
 description: |
   Performed hands-on security testing of a university system, identifying critical vulnerabilities allowing data manipulation and privilege escalation.

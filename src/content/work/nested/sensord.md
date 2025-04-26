@@ -1,7 +1,7 @@
 ---
 title: Sensor’D Bluetooth Arcade Game with IoT Controller
 publishDate: 2019-06-01 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/sensord.jpg
 img_alt: An Arduino-based physical arcade controller paired with a mobile game
 description: |
   Created a physical arcade car game controller using Arduino and Bluetooth HC05, integrating it with a custom Android game built from scratch.

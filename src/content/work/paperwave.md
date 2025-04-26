@@ -1,7 +1,7 @@
 ---
 title: PaperWave Mobile-Optimized Research Papers
 publishDate: 2024-07-01 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/paperwave.png
 img_alt: A research paper reflowed for mobile readability
 description: |
   Reimagining how we read academic PDFs on mobile — combining React Native, PyMuPDF, and BART summarization into a seamless mobile-first paper reader.

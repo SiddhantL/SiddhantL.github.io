@@ -1,7 +1,7 @@
 ---
 title: MediaMinds Text-to-Video Generator
 publishDate: 2023-05-01 00:00:00
-img: /assets/stock-3.jpg
+img: /assets/mediaminds.png
 img_alt: An AI-generated video timeline being rendered from text
 description: |
   Automated text-to-video generation using FlanT5, Stable Diffusion, and Google TTS — delivering media-ready content in under 3 minutes.

@@ -1,7 +1,7 @@
 ---
 title: evEntry Event Ticketing App
 publishDate: 2019-12-01 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/eventry.png
 img_alt: Mobile app interface for event ticketing and check-in system
 description: |
   Engineered an end-to-end mobile ticketing system supporting QR-based check-ins, real-time cancellations, and 2,000+ transactions in a single event.

@@ -1,7 +1,7 @@
 ---
 title: 6-DOF Robotic Arm with IoT Control
 publishDate: 2023-11-01 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/6dof.png
 img_alt: A 3D-printed robotic arm connected to a mobile phone app
 description: |
   Designed and programmed a fully controllable six-axis robotic arm integrated with mobile-based real-time IoT control using Arduino and Bluetooth.

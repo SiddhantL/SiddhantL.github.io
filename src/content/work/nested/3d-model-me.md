@@ -1,7 +1,7 @@
 ---
 title: Miniature Self-Modeling with 3D Printing
 publishDate: 2023-04-01 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/3dme.png
 img_alt: A small 3D-printed figurine of a person placed on a desk
 description: |
   Used Blender and Creality Ender3 to design and post-process 3D-printed models of people, focusing on multi-part assembly, slicing, and finishing techniques.

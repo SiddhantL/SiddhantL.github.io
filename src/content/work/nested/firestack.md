@@ -1,7 +1,7 @@
 ---
 title: FireStack Student Dashboard Web App
 publishDate: 2024-09-01 00:00:00
-img: /assets/stock-3.jpg
+img: /assets/firestack.png
 img_alt: A clean dashboard showing student tasks and calendars
 description: |
   Built a productivity dashboard for students integrating calendars, career tools, and assignment tracking into a centralized platform.

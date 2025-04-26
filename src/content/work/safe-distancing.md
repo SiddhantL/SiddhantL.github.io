@@ -1,7 +1,7 @@
 ---
 title: Safe Distancing
 publishDate: 2020-03-01 00:00:00
-img: /assets/stock-4.jpg
+img: /assets/safedistancing.jpg
 img_alt: A heatmap overlay of a crowded area on a mobile screen
 description: |
   A predictive Android application leveraging DBSCAN and LSTM to forecast and visualize venue crowding in real-time. Designed to promote public safety during COVID-19.
