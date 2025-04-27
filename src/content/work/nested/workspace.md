@@ -9,7 +9,7 @@ description: |
 tags:
   - Productivity
   - Freelance
-  - Personal Projects
+  - Design
 skills:
   - simple-icons:flutter
   - simple-icons:firebase
