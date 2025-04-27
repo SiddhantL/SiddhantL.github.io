@@ -1,5 +1,6 @@
 ---
 title: Sensor’D Bluetooth Arcade Game with IoT Controller
+slug: sensord
 publishDate: 2019-06-01 00:00:00
 img: /assets/sensord.jpg
 img_alt: An Arduino-based physical arcade controller paired with a mobile game
@@ -20,6 +21,7 @@ gallery:
   - /assets/sensord.jpg
 video:
   - https://www.youtube.com/embed/tQK7zG41_sE?si=BVHKhs8qBqO-vw7y
+  - https://www.youtube.com/embed/Lm_5xqpQHtY?si=RKgvRd4lTSbpttyg
 
 ---
 

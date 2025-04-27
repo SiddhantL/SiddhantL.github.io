@@ -1,5 +1,6 @@
 ---
 title: University System Security Testing
+slug: nmims-security
 publishDate: 2022-08-01 00:00:00
 img: /assets/ethical.png
 img_alt: A system terminal showing network vulnerability scan results
@@ -16,7 +17,8 @@ skills:
   - mdi:lock-alert
   - simple-icons:nmap
   - mdi:database
-
+gallery:
+  - /assets/ethical.png
 ---
 
 As part of a university initiative, I conducted black-box penetration testing of a live academic portal used by over 10,000 students. I began by mapping the attack surface and simulating privilege escalation via IDOR vulnerabilities and unvalidated POST request parameters.

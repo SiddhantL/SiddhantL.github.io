@@ -1,5 +1,6 @@
 ---
 title: Chefie — Smart Recipe Finder
+slug: chefie
 publishDate: 2015-06-01 00:00:00
 img: /assets/chefie.png
 img_alt: An Android app showing recipe suggestions based on selected ingredients
@@ -14,6 +15,8 @@ skills:
   - simple-icons:firebase
   - mdi:food
   - mdi:youtube
+video:
+  - https://www.youtube.com/embed/iXpCOV2teBY?si=GXylC-CrHifbaLfD
 ---
 
 Chefie was one of my earliest mobile app projects, developed and released independently on the Google Play Store nearly a decade ago. It was designed around a simple but powerful idea: help people cook with what they already have.

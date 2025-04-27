@@ -1,5 +1,6 @@
 ---
 title: Super Tailor — AI-Assisted Resume Tailoring
+slug: supertailor
 publishDate: 2024-01-01 00:00:00
 img: /assets/supertailor.png
 img_alt: A dashboard showcasing AI-assisted resume tailoring workflows

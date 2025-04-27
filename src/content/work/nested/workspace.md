@@ -1,5 +1,6 @@
 ---
 title: Workspace — Personal Productivity Platform
+slug: workspace
 publishDate: 2021-10-01 00:00:00
 img: /assets/workspace.png
 img_alt: A custom workspace app dashboard with project management, media gallery, and blog editor
@@ -15,6 +16,10 @@ skills:
   - mdi:folder
   - mdi:file-document
   - mdi:blogger
+gallery:
+  - /assets/workspace.png
+video:
+  - https://www.youtube.com/embed/tqYRf3t4Ax0?si=LIm0pzfHhygAxiC4
 ---
 
 Workspace was a freelance project that eventually evolved into my personal productivity hub. Built from scratch, it integrates a wide range of professional and creative workflows into a single seamless app experience.

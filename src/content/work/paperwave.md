@@ -1,5 +1,6 @@
 ---
 title: PaperWave Mobile-Optimized Research Papers
+slug: paperwave
 publishDate: 2024-07-01 00:00:00
 img: /assets/paperwave.png
 img_alt: A research paper reflowed for mobile readability

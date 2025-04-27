@@ -1,5 +1,6 @@
 ---
 title: evEntry Event Ticketing App
+slug: eventry
 publishDate: 2019-12-01 00:00:00
 img: /assets/eventry.png
 img_alt: Mobile app interface for event ticketing and check-in system
@@ -11,13 +12,14 @@ tags:
   - Payments
 skills:
   - mdi:cellphone
-  - mdi:qr-code-scan
+  - mdi-qrcode-scan
   - simple-icons:aws
   - mdi:credit-card
   - simple-icons:razorpay
   - mdi:account-check
   - mdi:language-kotlin
-
+video:
+  - https://www.youtube.com/embed/vaAv9kHFGsQ?si=aPwg5dKEzK9Pr5o8
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Safe Distancing
+slug: safe-distancing
 publishDate: 2020-03-01 00:00:00
 img: /assets/safedistancing.jpg
 img_alt: A heatmap overlay of a crowded area on a mobile screen

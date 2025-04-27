@@ -1,5 +1,6 @@
 ---
 title: FireStack Student Dashboard Web App
+slug: firestack
 publishDate: 2024-09-01 00:00:00
 img: /assets/firestack.png
 img_alt: A clean dashboard showing student tasks and calendars
@@ -18,7 +19,7 @@ skills:
   - simple-icons:firebase
   - mdi:clipboard-text
 video:
-  - https://www.youtube.com/embed/8DujxrMEZ3c?si=l5N7JX94YFWEEx3m
+  - https://www.youtube.com/embed/sRTDMGi53kg?si=qORvYtykB2ncJRYD
 ---
 
 FireStack is a productivity dashboard web app designed to help students manage their academic and career goals. It centralizes deadlines, to-dos, event calendars, and goal tracking into a responsive, easy-to-navigate interface.

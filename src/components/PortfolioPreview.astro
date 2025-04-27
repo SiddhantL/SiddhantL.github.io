@@ -263,10 +263,18 @@ const { data, id } = Astro.props.project;
   .project-card .skills {
     display: none !important;
     }
+  .project-card {
+    height: auto !important;
+    aspect-ratio: 13/9 !important;
+  }
   .description{
     margin-top:-2mm !important;
     height: auto !important;
+    padding: 0 0.5rem 0 0.5rem;
     flex-grow: 1;
+  }
+  .always-visible-meta{
+    padding: 0.5rem 0 0.3rem 0.5rem !important;
   }
   .project-card:hover .description p {
     font-size: var(--text-medium);
@@ -278,7 +286,11 @@ const { data, id } = Astro.props.project;
   }
   .card-title{
   font-size:0.9rem !important;
-  padding: 2 !important;
+  padding: 0.5rem !important;
+  white-space:nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 95%;
   }
   .project-card:hover .description-container {
   padding-top: 2.5rem !important;

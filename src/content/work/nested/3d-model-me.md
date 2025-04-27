@@ -1,5 +1,6 @@
 ---
 title: Miniature Self-Modeling with 3D Printing
+slug: 3d-model-me
 publishDate: 2023-04-01 00:00:00
 img: /assets/3dme.png
 img_alt: A small 3D-printed figurine of a person placed on a desk
@@ -15,6 +16,8 @@ skills:
   - simple-icons:blender
   - simple-icons:creality
   - mdi:file-image
+video:
+  - https://www.youtube.com/embed/3CXVsorTCfk?si=eGo7NFT0L7C-Oa4e
 
 ---
 
