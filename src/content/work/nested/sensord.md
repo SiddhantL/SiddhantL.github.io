@@ -16,6 +16,10 @@ skills:
   - mdi:cellphone
   - simple-icons:arduino
   - simple-icons:raspberrypi
+gallery:
+  - /assets/sensord.jpg
+video:
+  - https://www.youtube.com/embed/tQK7zG41_sE?si=BVHKhs8qBqO-vw7y
 
 ---
 

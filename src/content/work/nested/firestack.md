@@ -17,7 +17,8 @@ skills:
   - simple-icons:python
   - simple-icons:firebase
   - mdi:clipboard-text
-
+video:
+  - https://www.youtube.com/embed/8DujxrMEZ3c?si=l5N7JX94YFWEEx3m
 ---
 
 FireStack is a productivity dashboard web app designed to help students manage their academic and career goals. It centralizes deadlines, to-dos, event calendars, and goal tracking into a responsive, easy-to-navigate interface.

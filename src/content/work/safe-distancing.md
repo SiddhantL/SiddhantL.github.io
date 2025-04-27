@@ -16,6 +16,8 @@ skills:
   - mdi:map-marker-radius
   - mdi:database
   - simple-icons:tensorflow
+video:
+  - https://www.youtube.com/embed/XP5uQdw3YaU?si=Z8UHcZ3xraDRnkyD
 ---
 
 The Safe Distancing app was born out of a global need — empowering people to make smarter, safer decisions in public spaces during the height of the COVID-19 pandemic. Unlike typical crowd monitoring apps that simply aggregate GPS data, Safe Distancing pushes the boundaries by integrating unsupervised learning (DBSCAN) with temporal prediction models (LSTM) to detect hotspots and forecast future congestion.

@@ -1,7 +1,7 @@
 ---
 title: 6-DOF Robotic Arm with IoT Control
 publishDate: 2023-11-01 00:00:00
-img: /assets/6dof.png
+img: /assets/6dof-1.png
 img_alt: A 3D-printed robotic arm connected to a mobile phone app
 description: |
   Designed and programmed a fully controllable six-axis robotic arm integrated with mobile-based real-time IoT control using Arduino and Bluetooth.
@@ -16,7 +16,10 @@ skills:
   - mdi:car
   - mdi:chip
   - mdi:cellphone
-
+gallery:
+  - /assets/6dof-1.png
+  - /assets/6dof-2.jpg
+  - /assets/6dof-3.jpg
 ---
 
 This project represents a fusion of mechanical design, embedded programming, and mobile app development. Over the span of several months, I conceptualized, built, and programmed a six-degree-of-freedom robotic arm from the ground up. The frame and joints were modeled in Blender and 3D-printed on a Creality Ender3, using custom-tuned slicing profiles to balance torque demands with material rigidity. Each axis was powered by a stepper motor connected via a driver board to an Arduino controller, forming a low-latency actuation system.
