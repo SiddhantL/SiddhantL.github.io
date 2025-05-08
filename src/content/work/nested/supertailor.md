@@ -21,6 +21,6 @@ Super Tailor was a project born from personal necessity: crafting customized res
 
 At its core, Super Tailor uses GPT-based models to analyze a given job description, identify key skills and requirements, and suggest optimized resume skills. However, recognizing the risks of AI hallucination, I layered in structured manual overrides and editing options — allowing me to review, edit, or refine AI-suggested sections easily.
 
-The system includes a role-specific checklist system and inline comment generation for manual review. I developed a sleek frontend interface for this tool using Next.js and tightly integrated OpenAI APIs for backend processing.
+The system includes a role-specific checklist system and inline comment generation for manual review. I developed a sleek frontend interface for this tool using ReactJS and tightly integrated OpenAI API coupled with Together AI API for backend processing.
 
 Super Tailor significantly cut down the time needed to tailor resumes while dramatically improving the quality and relevance of each application. It represents a blend of AI augmentation and human judgment — a principle I deeply believe will define the best productivity tools going forward.
