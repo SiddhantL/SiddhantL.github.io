@@ -10,7 +10,7 @@ He has built 12+ consumer apps with over 10K users, demonstrating expertise in f
 
 ## Current Project
 
-### Iris - The Personal Assistant (Y Combinator W25)
+### Iris - The Personal Assistant (Y Combinator F25)
 - **Role**: Co-Founder & CTO
 - **What**: Personal assistant that automates scheduling and email management through natural language commands
 - **Tech**: React Native (iOS), Node.js, Natural Language Processing, Privacy-first architecture
