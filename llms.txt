@@ -1,0 +1,65 @@
+# Siddhant Lad - Portfolio & Projects
+
+> Co-Founder & CTO at Iris, backed by Y Combinator
+
+## About
+
+Siddhant Lad is a software engineer and entrepreneur, currently Co-Founder & CTO of Iris, a Y Combinator-backed personal assistant. His work focuses on AI, systems design, and rapid prototyping, building end-to-end products from mobile experiences to scalable backend systems.
+
+He has built 12+ consumer apps with over 10K users, demonstrating expertise in full-stack development, mobile engineering, and product design.
+
+## Current Project
+
+### Iris - The Personal Assistant (Y Combinator W25)
+- **Role**: Co-Founder & CTO
+- **What**: Personal assistant that automates scheduling and email management through natural language commands
+- **Tech**: React Native (iOS), Node.js, Natural Language Processing, Privacy-first architecture
+- **Links**:
+  - Portfolio page: https://siddhantlad.info/work/iris
+  - YC Launch: https://www.ycombinator.com/launches/Omf-iris-the-personal-assistant
+  - Demo video: https://youtu.be/lM8TqldYHXs
+
+## Education
+
+- **University of California, San Diego** - M.S. in Computer Science (Sept 2024 - 2025)
+- **NMIMS University, Mumbai** - B.Tech in Computer Engineering (2020 - 2024)
+
+## Featured Projects
+
+### Safe Distancing
+A predictive Android application leveraging DBSCAN and LSTM to forecast and visualize venue crowding in real-time. Designed to promote public safety during COVID-19.
+- Link: https://siddhantlad.info/work/safe-distancing
+
+### Workspace - Personal Productivity Platform
+A custom-built workspace management app featuring project tracking, media galleries, blog writing, and resume editing. Built with Flutter and Firebase.
+- Link: https://siddhantlad.info/work/workspace
+
+### Sensor'D - Bluetooth Arcade Game with IoT Controller
+Physical arcade car game controller using Arduino and Bluetooth HC05, integrated with a custom Android game built from scratch.
+- Link: https://siddhantlad.info/work/sensord
+
+## Technical Skills
+
+- **Languages**: Python, Java, Kotlin, TypeScript
+- **Frameworks**: React Native, Node.js, Astro, Flask
+- **Tools & Platforms**: AWS, GCP, Docker, Git, Figma
+- **Domains**: IoT, Computer Vision, Robotics, ML/DL, Mobile Apps
+
+## Contact & Social
+
+- **Website**: https://siddhantlad.info
+- **Email**: siddhantnlad@gmail.com
+- **GitHub**: https://github.com/SiddhantL
+- **LinkedIn**: https://www.linkedin.com/in/sidlad
+- **YouTube**: https://www.youtube.com/@siddhantlad
+
+## Site Structure
+
+- `/` - Home page with featured work
+- `/work/` - Complete portfolio of projects
+- `/about/` - Background, education, and skills
+- `/work/[project]` - Individual project pages with details, galleries, and videos
+
+---
+
+Last updated: 2025
