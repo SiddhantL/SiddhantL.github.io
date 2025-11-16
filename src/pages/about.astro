@@ -204,8 +204,14 @@ import Hero from '../components/Hero.astro';
 			display: contents;
 		}
 
+		.section-title {
+			grid-column-start: 1;
+			justify-self: start;
+		}
+
 		.content {
 			font-size: var(--text-base);
+			grid-column: 2 / 4;
 		}
 
 		.skills-grid {
