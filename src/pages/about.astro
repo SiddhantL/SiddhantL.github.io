@@ -22,38 +22,54 @@ import Hero from '../components/Hero.astro';
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<p>
-						I'm Siddhant Lad, building Iris, backed by Y Combinator. My interests lie at the intersection of AI, systems design, and rapid prototyping. We build end-to-end products — from designing mobile experiences to deploying scalable backend systems.
-					</p>
-					<p>
-						At Iris, we're building an AI calendar assistant that automates scheduling and email management. As a YC-backed startup, we're focused on creating technology that understands how people work and solves real productivity challenges at scale. Leading our technical architecture, we've designed a system that combines natural language processing with privacy-first principles.
-					</p>
-					<p>
-						Over the years, I've worked on projects ranging from IoT systems to machine learning models for biomedical research. I've also been involved in research at UC San Diego's MAE department, exploring deep learning for modeling and controlling dynamical systems.
-					</p>
-					<p>
-						Whether we're architecting scalable systems, refining user experiences, or building AI models, we approach every technical challenge with curiosity and precision. Outside of tech, I enjoy design, video production, and exploring how technology can bridge real-world gaps.
-					</p>
+					<p>I'm Siddhant Lad, building Iris, backed by Y Combinator. My interests lie at the intersection of AI, systems design, and rapid prototyping. We build end-to-end products — from designing mobile experiences to deploying scalable backend systems.</p>
+
+					<p>At Iris, we're building an AI calendar assistant that automates scheduling and email management. As a YC-backed startup, we're focused on creating technology that understands how people work and solves real productivity challenges at scale. Leading our technical architecture, we've designed a system that combines natural language processing with privacy-first principles.</p>
+
+					<p>Over the years, I've worked on projects ranging from IoT systems to machine learning models for biomedical research. I've also been involved in research at UC San Diego's MAE department, exploring deep learning for modeling and controlling dynamical systems.</p>
+
+					<p>Whether we're architecting scalable systems, refining user experiences, or building AI models, we approach every technical challenge with curiosity and precision. Outside of tech, I enjoy design, video production, and exploring how technology can bridge real-world gaps.</p>
 				</div>
 			</section>
 
 			<section>
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p><strong>University of California, San Diego</strong><br />M.S. in Computer Science — 2024–2026</p>
-					<p><strong>NMIMS University, Mumbai</strong><br />B.Tech in Computer Engineering — 2020–2024</p>
+					<div class="education-item">
+						<strong>University of California, San Diego</strong>
+						<span class="edu-date">Sept 2024 – 2025</span>
+						<p class="edu-desc">M.S. in Computer Science</p>
+					</div>
+
+					<div class="education-item">
+						<strong>NMIMS University, Mumbai</strong>
+						<span class="edu-date">2020 – 2024</span>
+						<p class="edu-desc">B.Tech in Computer Engineering</p>
+					</div>
 				</div>
 			</section>
 
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>
-						<strong>Languages:</strong> Python, Java, Kotlin, TypeScript<br />
-						<strong>Frameworks:</strong> React Native, Node.js, Astro, Flask<br />
-						<strong>Tools & Platforms:</strong> AWS, GCP, Docker, Git, Figma<br />
-						<strong>Domains:</strong> IoT, Computer Vision, Robotics, ML/DL, Mobile Apps
-					</p>
+					<div class="skills-grid">
+						<div class="skill-category">
+							<strong>Languages</strong>
+							<span>Python, Java, Kotlin, TypeScript</span>
+						</div>
+						<div class="skill-category">
+							<strong>Frameworks</strong>
+							<span>React Native, Node.js, Astro, Flask</span>
+						</div>
+						<div class="skill-category">
+							<strong>Tools & Platforms</strong>
+							<span>AWS, GCP, Docker, Git, Figma</span>
+						</div>
+						<div class="skill-category">
+							<strong>Domains</strong>
+							<span>IoT, Computer Vision, Robotics, ML/DL, Mobile Apps</span>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -93,6 +109,13 @@ import Hero from '../components/Hero.astro';
 
 	.content {
 		grid-column: 2 / 4;
+		font-size: var(--text-base);
+		line-height: 1.7;
+	}
+
+	.content p {
+		margin-bottom: 1rem;
+		max-width: 65ch;
 	}
 
 	.content :global(a) {
@@ -104,6 +127,67 @@ import Hero from '../components/Hero.astro';
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	/* Education styling */
+	.education-item {
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid var(--gray-800);
+	}
+
+	.education-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.education-item strong {
+		display: block;
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		margin-bottom: 0.25rem;
+	}
+
+	.edu-date {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--accent-regular);
+		margin-bottom: 0.5rem;
+	}
+
+	.edu-desc {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		margin: 0;
+	}
+
+	/* Skills grid styling */
+	.skills-grid {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: 1fr;
+	}
+
+	.skill-category {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem;
+		background: var(--gradient-subtle);
+		border-radius: 0.75rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.skill-category strong {
+		font-size: var(--text-base);
+		color: var(--gray-0);
+	}
+
+	.skill-category span {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.6;
 	}
 
 	@media (min-width: 50em) {
@@ -118,7 +202,14 @@ import Hero from '../components/Hero.astro';
 
 		section {
 			display: contents;
-			font-size: var(--text-lg);
+		}
+
+		.content {
+			font-size: var(--text-base);
+		}
+
+		.skills-grid {
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 </style>

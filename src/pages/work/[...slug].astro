@@ -211,21 +211,42 @@ header {
 .content {
 	max-width: 65ch;
 	margin-inline: auto;
+	font-size: var(--text-base);
+	line-height: 1.7;
 }
 
 .content > :global(* + *) {
 	margin-top: 1rem;
 }
 
+.content :global(p) {
+	color: var(--gray-300);
+}
+
 .content :global(h1),
-.content :global(h2),
+.content :global(h2) {
+	font-size: var(--text-xl);
+	margin: 2rem 0 1rem 0;
+	color: var(--gray-0);
+}
+
 .content :global(h3),
 .content :global(h4),
 .content :global(h5) {
-	margin: 1.5rem 0;
+	font-size: var(--text-lg);
+	margin: 1.5rem 0 0.75rem 0;
+	color: var(--gray-0);
 }
 
-.content :global(img) {
+.content :global(strong) {
+	font-size: var(--text-lg);
+	color: var(--gray-0);
+	display: block;
+	margin-top: 2rem;
+	margin-bottom: 0.75rem;
+}
+
+.content :global(img:not([style*="border-radius"])) {
 	border-radius: 1.5rem;
 	box-shadow: var(--shadow-sm);
 	background: var(--gradient-subtle);
