@@ -19,49 +19,6 @@ import Hero from '../components/Hero.astro';
 				/>
 			</Hero>
 
-			<section class="iris-section">
-				<h2 class="section-title">Building Iris</h2>
-				<div class="content">
-					<div class="yc-embed-container">
-						<a href='https://www.ycombinator.com/launches/Omf-iris-the-personal-assistant' target="_blank">
-							<img src='https://www.ycombinator.com/launches/Omf-iris-the-personal-assistant/upvote_embed.svg' alt='Launch YC: Iris: The Personal Assistant' class="yc-embed" />
-						</a>
-					</div>
-
-					<div class="media-grid">
-						<div class="media-item">
-							<img
-								src="/assets/yc-photo.png"
-								alt="Iris team at Y Combinator"
-								class="iris-photo"
-							/>
-						</div>
-						<div class="media-item">
-							<img
-								src="/assets/team-photo.png"
-								alt="Iris team"
-								class="iris-photo"
-							/>
-						</div>
-					</div>
-
-					<div class="video-container">
-						<h3>Watch our demo</h3>
-						<div class="video-wrapper">
-							<iframe
-								width="560"
-								height="315"
-								src="https://www.youtube.com/embed/lM8TqldYHXs"
-								title="Iris Demo Video"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-				</div>
-			</section>
-
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
@@ -149,84 +106,6 @@ import Hero from '../components/Hero.astro';
 		text-decoration-color: currentColor;
 	}
 
-	.iris-section {
-		background: var(--gradient-subtle);
-		border-radius: 1.5rem;
-		padding: 2rem;
-		border: 1px solid var(--gray-800);
-	}
-
-	.yc-embed-container {
-		display: flex;
-		justify-content: center;
-		margin: 2rem 0;
-	}
-
-	.yc-embed {
-		max-width: 250px;
-		height: auto;
-		transition: transform 0.2s ease;
-	}
-
-	.yc-embed:hover {
-		transform: scale(1.05);
-	}
-
-	.media-grid {
-		display: grid;
-		gap: 1.5rem;
-		margin: 2rem 0;
-		grid-template-columns: 1fr;
-	}
-
-	.media-item {
-		overflow: hidden;
-		border-radius: 1rem;
-	}
-
-	.iris-photo {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-		border-radius: 1rem;
-		box-shadow: var(--shadow-md);
-		transition: transform 0.3s ease;
-	}
-
-	.iris-photo:hover {
-		transform: scale(1.02);
-	}
-
-	.video-container {
-		margin: 2rem 0;
-	}
-
-	.video-container h3 {
-		font-size: var(--text-lg);
-		color: var(--gray-0);
-		margin-bottom: 1rem;
-		text-align: center;
-	}
-
-	.video-wrapper {
-		position: relative;
-		padding-bottom: 56.25%;
-		height: 0;
-		overflow: hidden;
-		border-radius: 1rem;
-		box-shadow: var(--shadow-lg);
-	}
-
-	.video-wrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: none;
-		border-radius: 1rem;
-	}
-
 	@media (min-width: 50em) {
 		.about {
 			display: grid;
@@ -240,19 +119,6 @@ import Hero from '../components/Hero.astro';
 		section {
 			display: contents;
 			font-size: var(--text-lg);
-		}
-
-		.iris-section {
-			padding: 3rem;
-		}
-
-		.media-grid {
-			grid-template-columns: 1fr 1fr;
-			gap: 2rem;
-		}
-
-		.yc-embed {
-			max-width: 300px;
 		}
 	}
 </style>
