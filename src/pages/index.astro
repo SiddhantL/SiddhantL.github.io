@@ -13,10 +13,10 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 // Manually select featured projects in desired order
-const allProjects = await getCollection('work');
+const allProjects = (await getCollection('work')).filter((entry) => !entry.id.includes('/'));
 const featuredSlugs = ['iris', 'safe-distancing', 'workspace', 'sensord'];
 const projects = featuredSlugs
-	.map(slug => allProjects.find(p => p.id === `${slug}.md`))
+	.map(slug => allProjects.find(p => p.slug === slug || p.id === `${slug}.md` || p.id === slug))
 	.filter(Boolean);
 ---
 
