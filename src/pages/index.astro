@@ -20,29 +20,60 @@ const projects = featuredSlugs
 	.filter(Boolean);
 ---
 
-<BaseLayout>
+<BaseLayout 
+	title="Minro - AI Calendar Assistant | Automate Your Schedule & Email Management" 
+	description="Transform your productivity with Minro's AI calendar assistant. Automate scheduling, email replies, and time management through natural language commands. Start your free trial."
+>
+	<!-- JSON-LD Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Minro",
+		"description": "AI-powered calendar assistant that automates scheduling and email management for busy professionals.",
+		"url": "https://minro.com",
+		"logo": "https://minro.com/assets/iris-logo-icon.png",
+		"foundingDate": "2025",
+		"sameAs": [
+			"https://www.ycombinator.com/launches/Omf-iris-the-personal-assistant"
+		],
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"contactType": "Customer Support",
+			"email": "hello@minro.com"
+		}
+	}
+	</script>
+
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, I am Siddhant Lad"
-					tagline="Building Iris, backed by Y Combinator."
+					title="AI Calendar Assistant That Actually Works"
+					tagline="Automate scheduling, email management, and time blocking with natural language commands. Backed by Y Combinator."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="rocket-launch" size="1.33em" /> Builder</Pill>
-						<Pill><Icon icon="prototype" size="1.33em" /> Prototyper</Pill>
+						<Pill><Icon icon="calendar" size="1.33em" /> Smart Scheduling</Pill>
+						<Pill><Icon icon="email" size="1.33em" /> Email Automation</Pill>
+						<Pill><Icon icon="chat" size="1.33em" /> Natural Language</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="Siddhant Lad : Home"
+					alt="Minro AI Calendar Assistant Interface"
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="/assets/yc-photo.png"
+					title="Minro - Y Combinator Backed AI Calendar Assistant"
 				/>
 			</header>
+
+			<!-- Answer Capsule for AI Citation -->
+			<section class="answer-capsule">
+				<h2>What is Minro?</h2>
+				<p>Minro is an AI-powered calendar assistant that automates scheduling, email management, and time blocking through natural language commands, helping busy professionals save 5+ hours weekly on administrative tasks.</p>
+			</section>
 
 			<Skills />
 		</div>
@@ -50,8 +81,8 @@ const projects = featuredSlugs
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Projects that combine code, creativity, and systems thinking — built for research, learning, and real-world use.</p>
+					<h3>How Minro Works</h3>
+					<p>Simply tell Minro what you need in natural language, and it handles the rest — from reorganizing your day to managing email replies automatically.</p>
 				</header>
 
 				<div class="gallery">
@@ -77,6 +108,36 @@ const projects = featuredSlugs
 			<!-- ✅ Replaced Mentions with Skills -->
 			<SkillSection />
 		</main>
+
+		<!-- Blog Preview Section -->
+		<section class="section with-background blog-preview">
+			<header class="section-header stack gap-2 lg:gap-4">
+				<h3>AI Calendar Insights</h3>
+				<p>Learn how to optimize your calendar workflow with AI-powered automation strategies and productivity tips from our team.</p>
+			</header>
+
+			<div class="blog-cards">
+				<article class="blog-card">
+					<h4><a href="/blog/how-to-automate-calendar-management/">How to Automate Calendar Management</a></h4>
+					<p>Save 5+ hours weekly with proven calendar automation strategies that eliminate manual scheduling overhead.</p>
+				</article>
+				<article class="blog-card">
+					<h4><a href="/blog/best-ai-calendar-assistants-2026/">Best AI Calendar Assistants 2026</a></h4>
+					<p>Compare top AI calendar tools and find the perfect automation solution for your productivity workflow.</p>
+				</article>
+				<article class="blog-card">
+					<h4><a href="/blog/reduce-email-management-overhead/">Reduce Email Management Overhead</a></h4>
+					<p>Cut email time by 70% with AI-powered response automation and intelligent coordination strategies.</p>
+				</article>
+			</div>
+
+			<div class="cta">
+				<CallToAction href="/blog/">
+					View All Posts
+					<Icon icon="arrow-right" size="1.2em" />
+				</CallToAction>
+			</div>
+		</section>
 
 		<ContactCTA />
 	</div>
@@ -203,6 +264,28 @@ const projects = featuredSlugs
 	}
 
 	/* You may remove this if you deleted the old mention section */
+	.answer-capsule {
+		background: var(--gradient-accent-orange);
+		border-radius: 1.5rem;
+		padding: 2rem;
+		text-align: center;
+		margin: 2rem 0;
+	}
+	
+	.answer-capsule h2 {
+		color: var(--gray-0);
+		font-size: var(--text-xl);
+		margin-bottom: 1rem;
+	}
+	
+	.answer-capsule p {
+		color: var(--gray-100);
+		font-size: var(--text-lg);
+		line-height: 1.6;
+		max-width: 60ch;
+		margin: 0 auto;
+	}
+
 	.mention-card {
 		display: flex;
 		height: 7rem;
@@ -221,5 +304,54 @@ const projects = featuredSlugs
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
+	}
+
+	.blog-preview {
+		margin-top: 3rem;
+	}
+	
+	.blog-cards {
+		display: grid;
+		gap: 1.5rem;
+		margin: 2rem 0;
+	}
+	
+	@media (min-width: 50em) {
+		.blog-cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	
+	.blog-card {
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+		transition: transform 0.2s ease;
+	}
+	
+	.blog-card:hover {
+		transform: translateY(-2px);
+	}
+	
+	.blog-card h4 {
+		margin-bottom: 0.5rem;
+	}
+	
+	.blog-card h4 a {
+		color: var(--gray-0);
+		text-decoration: none;
+		font-size: var(--text-lg);
+		line-height: 1.3;
+	}
+	
+	.blog-card h4 a:hover {
+		color: var(--accent-regular);
+	}
+	
+	.blog-card p {
+		color: var(--gray-300);
+		line-height: 1.6;
+		font-size: var(--text-base);
 	}
 </style>

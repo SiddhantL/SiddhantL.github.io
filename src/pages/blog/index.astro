@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import Icon from '../../components/Icon.astro';
+---
+
+<BaseLayout 
+	title="AI Calendar Assistant Blog | Productivity Tips & Automation Guides"
+	description="Learn how to automate your calendar, reduce email overhead, and boost productivity with AI-powered scheduling tips from Minro's team."
+>
+	<div class="stack gap-20">
+		<main class="wrapper">
+			<header class="blog-header">
+				<h1>AI Calendar & Productivity Blog</h1>
+				<p class="blog-tagline">Expert insights on calendar automation, AI scheduling, and productivity optimization</p>
+			</header>
+
+			<section class="blog-grid">
+				<article class="blog-post-card">
+					<h2><a href="/blog/how-to-automate-calendar-management/">How to Automate Calendar Management: A Guide for Busy Professionals</a></h2>
+					<p class="post-meta">March 15, 2026 • 8 min read</p>
+					<p>Discover proven strategies to automate your calendar management and reclaim 5+ hours weekly through AI-powered scheduling tools.</p>
+					<div class="post-tags">
+						<span class="tag">Calendar Automation</span>
+						<span class="tag">Productivity</span>
+						<span class="tag">AI Tools</span>
+					</div>
+				</article>
+
+				<article class="blog-post-card">
+					<h2><a href="/blog/best-ai-calendar-assistants-2026/">Best AI Calendar Assistants for Busy Professionals in 2026</a></h2>
+					<p class="post-meta">March 10, 2026 • 12 min read</p>
+					<p>Compare the top AI calendar assistants and find the perfect automation tool for your workflow and scheduling needs.</p>
+					<div class="post-tags">
+						<span class="tag">AI Assistants</span>
+						<span class="tag">Tool Comparison</span>
+						<span class="tag">Reviews</span>
+					</div>
+				</article>
+
+				<article class="blog-post-card">
+					<h2><a href="/blog/reduce-email-management-overhead/">Reduce Email Management Overhead: 5 AI-Powered Strategies</a></h2>
+					<p class="post-meta">March 5, 2026 • 7 min read</p>
+					<p>Cut email management time by 70% with AI automation strategies that handle responses, scheduling, and inbox organization.</p>
+					<div class="post-tags">
+						<span class="tag">Email Automation</span>
+						<span class="tag">Time Management</span>
+						<span class="tag">AI</span>
+					</div>
+				</article>
+
+				<article class="blog-post-card">
+					<h2><a href="/blog/reduce-context-switching-calendar-workflow/">Reduce Context Switching in Calendar Workflows</a></h2>
+					<p class="post-meta">February 28, 2026 • 9 min read</p>
+					<p>Eliminate productivity-killing context switching between calendar apps with streamlined AI workflow automation.</p>
+					<div class="post-tags">
+						<span class="tag">Workflow</span>
+						<span class="tag">Context Switching</span>
+						<span class="tag">Productivity</span>
+					</div>
+				</article>
+
+				<article class="blog-post-card">
+					<h2><a href="/blog/ai-calendar-assistant-alternatives/">AI Calendar Assistant Alternatives: Manual vs Automation</a></h2>
+					<p class="post-meta">February 20, 2026 • 11 min read</p>
+					<p>Compare manual calendar management approaches with AI-powered alternatives and their impact on professional productivity.</p>
+					<div class="post-tags">
+						<span class="tag">Alternatives</span>
+						<span class="tag">Manual vs AI</span>
+						<span class="tag">Comparison</span>
+					</div>
+				</article>
+			</section>
+
+			<div class="cta-section">
+				<CallToAction href="https://minro.com">
+					Try Minro Free Today
+					<Icon icon="arrow-right" size="1.2em" />
+				</CallToAction>
+			</div>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.blog-header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+	}
+	
+	.blog-header h1 {
+		font-size: var(--text-4xl);
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+	}
+	
+	.blog-tagline {
+		font-size: var(--text-lg);
+		color: var(--gray-300);
+		max-width: 60ch;
+		margin: 0 auto;
+	}
+	
+	.blog-grid {
+		display: grid;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	
+	@media (min-width: 50em) {
+		.blog-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	
+	.blog-post-card {
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	
+	.blog-post-card:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.blog-post-card h2 {
+		margin-bottom: 0.5rem;
+	}
+	
+	.blog-post-card h2 a {
+		color: var(--gray-0);
+		text-decoration: none;
+		font-size: var(--text-xl);
+		line-height: 1.3;
+	}
+	
+	.blog-post-card h2 a:hover {
+		color: var(--accent-regular);
+	}
+	
+	.post-meta {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+		margin-bottom: 1rem;
+	}
+	
+	.blog-post-card p:not(.post-meta) {
+		color: var(--gray-200);
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+	
+	.post-tags {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+	
+	.tag {
+		background: var(--accent-dark);
+		color: var(--accent-text-over);
+		padding: 0.25rem 0.75rem;
+		border-radius: 1rem;
+		font-size: var(--text-sm);
+	}
+	
+	.cta-section {
+		text-align: center;
+		margin-top: 3rem;
+		padding: 2rem;
+		background: var(--gradient-accent-orange);
+		border-radius: 1rem;
+	}
+</style>

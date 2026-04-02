@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://siddhantlad.info', // your custom domain!
+  site: 'https://minro.com', // your custom domain!
   outDir: 'dist',
   base: '/',
+  integrations: [],
 });

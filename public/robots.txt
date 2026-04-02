@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minro.com/sitemap.xml
+
+# AI Training Data
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /

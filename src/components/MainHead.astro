@@ -7,15 +7,24 @@ interface Props {
 }
 
 const {
-	title = 'Siddhant Lad: Personal Site',
-	description = 'The personal site of Siddhant Lad',
+	title = 'Minro - AI-Powered Calendar Assistant | Automate Your Schedule',
+	description = 'Minro transforms your calendar management with AI. Automate scheduling, email replies, and time blocking through natural language commands. Start your free trial today.',
 } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
+<meta name="description" content={description} />
+<meta property="og:description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Minro" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={Astro.url} />
 <title>{title}</title>
 
 <link rel="icon" type="image/png" href="/assets/iris-logo-icon.png" />
