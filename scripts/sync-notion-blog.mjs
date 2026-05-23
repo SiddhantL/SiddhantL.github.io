@@ -107,6 +107,8 @@ async function syncPosts() {
 
   await fs.mkdir(BLOG_DIR, { recursive: true });
 
+  const syncedSlugs = new Set();
+
   for (const page of response.results) {
     const title = getProperty(page, "Title") || "Untitled";
     const description = getProperty(page, "Description") || "";
@@ -114,6 +116,7 @@ async function syncPosts() {
     const tags = getProperty(page, "Tags") || [];
     const slug = slugify(title);
 
+    syncedSlugs.add(slug);
     console.log(`Syncing: ${title} -> ${slug}.md`);
 
     const mdBlocks = await n2m.pageToMarkdown(page.id);
@@ -153,6 +156,16 @@ async function syncPosts() {
     );
 
     console.log(`  Done.\n`);
+  }
+
+  const existing = await fs.readdir(BLOG_DIR).catch(() => []);
+  for (const file of existing) {
+    if (!file.endsWith(".md")) continue;
+    const slug = file.replace(/\.md$/, "");
+    if (!syncedSlugs.has(slug)) {
+      await fs.unlink(path.join(BLOG_DIR, file));
+      console.log(`Removed draft/unpublished: ${file}`);
+    }
   }
 
   console.log("Sync complete.");
