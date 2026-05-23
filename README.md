@@ -1,4 +1,4 @@
-# 📚 Siddhant Lad — Portfolio Website
+# Siddhant Lad : Portfolio Website
 
 Welcome to the personal portfolio of **Siddhant Lad** — building **Minro**, backed by **Y Combinator** (F25), a proactive customer success platform for founders.
 
