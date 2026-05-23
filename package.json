@@ -3,14 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
-    "build": "tinacms build && astro build",
+    "dev": "astro dev",
+    "build": "astro build",
+    "sync-blog": "node scripts/sync-notion-blog.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@tinacms/cli": "^2.3.1",
+    "@notionhq/client": "^5.22.0",
     "astro": "^5.7.4",
-    "tinacms": "^3.8.1"
+    "notion-to-md": "^3.1.9"
   }
 }
