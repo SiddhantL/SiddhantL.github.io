@@ -13,8 +13,6 @@ tags:
 gallery:
   - /assets/minro-gallery.png
   - /assets/minro-yc.jpg
-  - /assets/yc-photo.png
-  - /assets/team-photo.png
 skills:
   - mdi:rocket-launch
   - mdi:chart-line
