@@ -1,6 +1,6 @@
 # 📚 Siddhant Lad — Portfolio Website
 
-Welcome to the personal portfolio of **Siddhant Lad** — building **Iris**, backed by **Y Combinator** (F25), the personal assistant that automates scheduling and email management.
+Welcome to the personal portfolio of **Siddhant Lad** — building **Minro**, backed by **Y Combinator** (F25), a proactive customer success platform for founders.
 
 This website highlights selected projects, technical skills, and professional experience.
 It is designed to serve as both a showcase and a dynamic platform to evolve alongside my career.
@@ -9,7 +9,7 @@ It is designed to serve as both a showcase and a dynamic platform to evolve alon
 
 ## 🚀 About Me
 
-I'm building **Iris**, a Y Combinator-backed personal assistant. My work focuses on AI, systems design, and rapid prototyping, building end-to-end products from mobile experiences to scalable backend systems.
+I'm building **Minro**, a Y Combinator-backed (F25) proactive customer success platform. My work focuses on AI, systems design, and rapid prototyping, building end-to-end products from mobile experiences to scalable backend systems.
 
 I've built **12+ consumer apps with over 10K users**, demonstrating expertise in full-stack development, mobile engineering, and product design.
 
