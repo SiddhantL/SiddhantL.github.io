@@ -11,7 +11,7 @@ Hey
 
 ```javascript
 class Test {
-//Hey this is my new place for blogs
+//Hey this is my new place for blogs.
 }
 ```
 
