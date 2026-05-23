@@ -84,6 +84,8 @@ function getProperty(page, name) {
       return prop.multi_select.map((s) => s.name);
     case "select":
       return prop.select?.name || null;
+    case "status":
+      return prop.status?.name || null;
     default:
       return null;
   }
@@ -96,9 +98,9 @@ async function syncPosts() {
     database_id: NOTION_DATABASE_ID,
     filter: {
       property: "Status",
-      select: { equals: "published" },
+      status: { equals: "published" },
     },
-    sorts: [{ property: "PublishDate", direction: "descending" }],
+    sorts: [{ property: "Publish Date", direction: "descending" }],
   });
 
   console.log(`Found ${response.results.length} published post(s).\n`);
@@ -108,7 +110,7 @@ async function syncPosts() {
   for (const page of response.results) {
     const title = getProperty(page, "Title") || "Untitled";
     const description = getProperty(page, "Description") || "";
-    const publishDate = getProperty(page, "PublishDate") || new Date().toISOString().split("T")[0];
+    const publishDate = getProperty(page, "Publish Date") || new Date().toISOString().split("T")[0];
     const tags = getProperty(page, "Tags") || [];
     const slug = slugify(title);
 
