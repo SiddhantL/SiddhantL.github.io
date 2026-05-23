@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "sync-blog": "node --env-file=.env scripts/sync-notion-blog.mjs",
+    "publish-blog": "node --env-file=.env scripts/sync-notion-blog.mjs && git add -A && git commit -m 'publish blog updates' && git push",
     "preview": "astro preview",
     "astro": "astro"
   },

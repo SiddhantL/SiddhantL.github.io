@@ -16,7 +16,7 @@ const { data, id } = Astro.props.project;
 		<div class="card-header">
 			<h3 class="card-title">{data.title}</h3>
 			<time datetime={data.publishDate.toISOString()}>
-				{data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+				{data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' })}
 			</time>
 		</div>
 		<p class="card-desc">{data.description}</p>
