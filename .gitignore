@@ -13,6 +13,9 @@ yarn-error.log*
 pnpm-debug.log*
 
 
+# tina generated
+tina/__generated__/
+
 # environment variables
 .env
 .env.production
