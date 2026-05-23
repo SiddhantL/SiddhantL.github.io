@@ -1,11 +1,11 @@
 ---
-title: 6-DOF Robotic Arm with IoT Control
+title: 6-DOF Robotic Arm
 slug: 6-dof
 publishDate: 2023-11-01 00:00:00
 img: /assets/6dof-1.png
 img_alt: A 3D-printed robotic arm connected to a mobile phone app
 description: |
-  Designed and programmed a fully controllable six-axis robotic arm integrated with mobile-based real-time IoT control using Arduino and Bluetooth.
+  Six-axis robotic arm I designed, 3D-printed, and programmed from scratch. Controlled via a custom Android app over Bluetooth.
 tags:
   - IoT
   - Robotics
@@ -25,10 +25,8 @@ video:
   - https://www.youtube.com/embed/oV6S_uxZM0Y?si=lKShHBQjjtgqJ-zg
 ---
 
-This project represents a fusion of mechanical design, embedded programming, and mobile app development. Over the span of several months, I conceptualized, built, and programmed a six-degree-of-freedom robotic arm from the ground up. The frame and joints were modeled in Blender and 3D-printed on a Creality Ender3, using custom-tuned slicing profiles to balance torque demands with material rigidity. Each axis was powered by a stepper motor connected via a driver board to an Arduino controller, forming a low-latency actuation system.
+Designed the frame in Blender, 3D-printed it on an Ender3 with custom slicing profiles tuned for torque vs rigidity, and wired six stepper motors through driver boards to an Arduino.
 
-On the software side, I designed an Android application in Kotlin that communicated with the Arduino via an HC-05 Bluetooth module. This app featured a joystick-like interface that allowed for both manual manipulation and saved sequence execution of the robotic arm. I implemented real-time telemetry that provided live position feedback and error detection, displayed in an intuitive dashboard UI.
+The Kotlin Android app talks to the arm over Bluetooth (HC-05) with a joystick interface for manual control and saved sequences for repeatable actions. Built real-time telemetry that feeds back joint positions and flags errors in a dashboard UI.
 
-Calibration was critical — each joint's motion range had to be mapped, constrained, and smoothed to prevent jitter and mechanical wear. I wrote a custom PID tuning routine for the motor controllers to stabilize the movements, and designed a compact control box to house all wiring and electronics for field safety. The robotic arm was capable of performing repeatable pick-and-place actions and demonstrated object manipulation tasks in a controlled environment.
-
-This project not only strengthened my understanding of kinematics, control theory, and microcontroller interfacing, but also taught me the importance of spatial design and user-centric software when working with physical systems. The full-stack development cycle — from circuit design to UI polish — was a highlight of my hardware journey.
+Each joint needed its own motion mapping, constraints, and smoothing to prevent jitter. Wrote a custom PID tuning routine for the motor controllers and designed a compact control box to house all the wiring. The arm could do reliable pick-and-place operations in a controlled environment.

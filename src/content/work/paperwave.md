@@ -1,11 +1,11 @@
 ---
-title: PaperWave Mobile-Optimized Research Papers
+title: PaperWave
 slug: paperwave
 publishDate: 2024-07-01 00:00:00
 img: /assets/paperwave.png
 img_alt: A research paper reflowed for mobile readability
 description: |
-  Reimagining how we read academic PDFs on mobile — combining React Native, PyMuPDF, and BART summarization into a seamless mobile-first paper reader.
+  Mobile-first research paper reader that reflows academic PDFs into a readable format with AI summarization. Built with React Native, PyMuPDF, and BART.
 tags:
   - React Native
   - LLM
@@ -19,10 +19,8 @@ skills:
 
 ---
 
-PaperWave is my take on rethinking how long academic PDFs are consumed on mobile. I set out to build an app that reflows technical research papers into a readable, scrollable experience, with an option to convert it into an audio format — eliminating the need for pinching, zooming, and scrolling through two-column chaos.
+Reading academic PDFs on a phone is miserable. Two-column layouts, tiny fonts, constant pinch-and-zoom. PaperWave reflows papers into a scrollable, mobile-native reading experience with optional audio conversion.
 
-Built in React Native, the frontend provides a minimalist reading interface optimized for typography and readability. Behind the scenes, I used PyMuPDF and pdf2image to extract content from PDFs and BART-LARGE-CNN via LangChain to chunk, summarize, and stream context-aware sections to the user.
+The backend uses PyMuPDF and pdf2image for content extraction, and BART-LARGE-CNN via LangChain for chunked, context-aware summarization. The React Native frontend is stripped down to just typography and readability.
 
-The model pipeline is deployed on AWS Elastic Beanstalk, leveraging async queuing and multi-threading to handle load during batch uploads. We optimized latency by offloading image-to-text tasks to a serverless worker layer and caching common queries.
-
-This project allowed me to explore full-stack NLP at scale, tackle UX design for long-form reading, and experiment with mobile-native ways of displaying machine-processed content. It’s especially valuable for students, researchers, and anyone tired of reading tiny font PDFs on their phone.
+Pipeline runs on AWS Elastic Beanstalk with async queuing and a serverless worker layer for image-to-text tasks. Common queries are cached to keep latency down on repeat reads.

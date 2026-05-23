@@ -8,292 +8,90 @@ interface Props {
 const { data, id } = Astro.props.project;
 ---
 
-<div class="project-card">
-  <a class="overlay-link" href={`/work/${id}`} aria-label={`View project ${data.title}`}></a>
-
-  <img src={data.img} alt={data.img_alt || data.title} crossorigin="anonymous" loading="lazy" />
-
-  <!-- Tags and Skills: move outside the container that hides on hover -->
-  <div class="always-visible-meta">
-    <div class="skills">
-      {Array.isArray(data.skills) && data.skills.length > 0 &&
-        data.skills.map((skill) => <iconify-icon class="iconify" icon={skill} />)}
-    </div>
-    <div class="tag-pills">
-	 <div class="mobile-tags">
-      {data.tags?.map(tag => <span class="pill">{tag}</span>)}
-	  </div>
-    </div>
-  </div>
-
-  <!-- Only description and buttons slide up -->
-  <div class="description-container">
-    <h2 class="card-title">{data.title}</h2>
-    <div class="description">
-      <p>{data.description}</p>
-      <div class="buttons">
-        {data.repo && (
-          <a href={data.repo} target="_blank" rel="noopener noreferrer" class="z-10">
-            <span>GitHub <iconify-icon icon="mdi:github" /></span>
-          </a>
-        )}
-        {data.demo && (
-          <a href={data.demo} target="_blank" rel="noopener noreferrer" class="z-10">
-            <span>Demo <iconify-icon icon="mdi:open-in-new" /></span>
-          </a>
-        )}
-      </div>
-    </div>
-  </div>
-</div>
-
+<a class="card" href={`/work/${id}`}>
+	<div class="card-image">
+		<img src={data.img} alt={data.img_alt || data.title} loading="lazy" />
+	</div>
+	<div class="card-body">
+		<h3 class="card-title">{data.title}</h3>
+		<p class="card-desc">{data.description}</p>
+		{data.tags && data.tags.length > 0 && (
+			<div class="card-tags">
+				{data.tags.slice(0, 3).map(tag => <span class="tag">{tag}</span>)}
+			</div>
+		)}
+	</div>
+</a>
 
 <style>
-.always-visible-meta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+	.card {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--gray-800);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		transition: border-color var(--transition), box-shadow var(--transition);
+		text-decoration: none;
+		color: inherit;
+		background: var(--gray-999);
+	}
 
-  .project-card {
-    position: relative;
-    width: 100%;
-    height: 11rem;
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 0.75rem;
-    background: var(--background-primary);
-  }
+	.card:hover {
+		border-color: var(--gray-700);
+		box-shadow: var(--shadow-md);
+	}
 
-  @media (min-width: 50em) {
-    .project-card {
-      height: 22rem;
-      border-radius: 1.5rem;
-    }
-	
-  }
+	.card-image {
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		background: var(--gray-900);
+	}
 
-.overlay-link {
-  position: absolute;
-  inset: 0;
-  z-index: 10; /* must be above all other elements */
-}
-.project-card * {
-  pointer-events: none; /* disable clicks on child elements */
-}
-.project-card .overlay-link {
-  pointer-events: auto; /* only enable click on this */
-}
+	.card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
 
-  .project-card img {
-    object-fit: cover;
-    object-position: center 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background-primary);
-  }
+	.card:hover .card-image img {
+		transform: scale(1.02);
+	}
 
-  .description-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    transition: 0.35s;
-    background: var(--description-container);
-    transform: translateY(63%);
-    padding-top: 15px;
-    transition-property: transform, padding-top;
-    color: var(--on-primary);
-    z-index: 2;
-  }
+	.card-body {
+		padding: 1.25rem;
+	}
 
-  .project-card:hover .description-container {
-    transform: translateY(0%);
-    padding-top: 4rem;
-  }
+	.card-title {
+		font-size: var(--text-base);
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		letter-spacing: -0.01em;
+	}
 
-  .card-title {
-    position: absolute;
-    display: block;
-    width: max-content;
-    top: 0.9px;
-    padding: 4px 22px;
-    font-size: var(--text-title);
-    font-weight: 500;
-    background: var(--card-title-background);
-    backdrop-filter: blur(10px);
-    z-index: 3;
-    transform: translateY(-100%);
-    border-radius: 0 8px 0 0;
-    transition-duration: 0.35s;
-    transition-property: background, transform;
-  }
+	.card-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.5;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 
-  .project-card:hover .card-title {
-    transform: translateY(11%);
-    backdrop-filter: none;
-    background: #0000;
-  }
+	.card-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+		margin-top: 0.75rem;
+	}
 
- .description {
-  padding: 0 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 100%;
-  overflow: hidden;
-}
-
-.description p {
-  font-size: var(--text-medium);
-  flex: 1;
-  min-height: 1.5rem;
-  max-height: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-
-/* On hover: allow scrolling */
-.project-card:hover .description p {
-  overflow-y: auto;
-  white-space: normal;
-  text-overflow: unset;
-  padding-right: 6px;
-}
-
-/* Optional: visible scrollbar only on hover */
-.project-card:hover .description p::-webkit-scrollbar {
-  width: 6px;
-}
-
-.project-card:hover .description p::-webkit-scrollbar-thumb {
-  background: var(--primary, #888);
-  border-radius: 4px;
-}
-
-.project-card:hover .description p::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-
-  .skills {
-    display: flex;
-    gap: 10px;
-    font-size: 2rem;
-  }
-.tag-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.pill {
-  background-color: var(--pill-background);
-  color: #fff;
-  padding: 2px 12px;
-  font-size: 0.75rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  margin-right:3px;
-  line-height: 1.25rem;
-  white-space: nowrap;
-}
-
-  .buttons {
-    padding: 14px;
-    width: 100%;
-    height: 47px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    font-size: var(--text-button);
-    z-index: 3;
-  }
-
-  .buttons a {
-    position: relative;
-    z-index: 3;
-  }
-
-  .buttons a:hover {
-    color: var(--primary-80);
-  }
-
-  .buttons a::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    height: 2px;
-    width: 100%;
-    transform-origin: 0 0;
-    transform: scale(0);
-    background: var(--primary);
-    transition: 0.35s transform;
-  }
-
-  .buttons a:hover::after {
-    transform: scale(1);
-  }
-
-  .buttons a span {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  iconify-icon {
-  font-size: 2rem;
-  color: var(--gray-color);
-  display: inline-block;
-  line-height: 1;
-  vertical-align: middle;
-}
-@media (max-width: 49.99em) {
-  .project-card .skills {
-    display: none !important;
-    }
-  .project-card {
-    height: auto !important;
-    aspect-ratio: 13/9 !important;
-  }
-  .description{
-    margin-top:-2mm !important;
-    height: auto !important;
-    padding: 0 0.5rem 0 0.5rem;
-    flex-grow: 1;
-  }
-  .always-visible-meta{
-    padding: 0.5rem 0 0.3rem 0.5rem !important;
-  }
-  .project-card:hover .description p {
-    font-size: var(--text-medium);
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    flex-grow: 1;
-    margin-bottom: auto;
-  }
-  .card-title{
-  font-size:0.9rem !important;
-  padding: 0.5rem !important;
-  white-space:nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  max-width: 95%;
-  }
-  .project-card:hover .description-container {
-  padding-top: 2.5rem !important;
-  }
-}
+	.tag {
+		font-size: var(--text-xs);
+		padding: 0.2rem 0.5rem;
+		border-radius: var(--radius-full);
+		background: var(--accent-subtle);
+		color: var(--gray-400);
+		font-weight: 500;
+	}
 </style>

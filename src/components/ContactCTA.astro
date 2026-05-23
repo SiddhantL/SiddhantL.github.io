@@ -1,45 +1,58 @@
 ---
-import CallToAction from './CallToAction.astro';
-import Icon from './Icon.astro';
 ---
 
-<aside>
-	<h2>Interested in Working Together?</h2>
-	<CallToAction href="mailto:siddhantnlad@gmail.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
-</aside>
+<section class="cta">
+	<div class="wrapper cta-inner">
+		<h2>Let's work together</h2>
+		<a href="mailto:siddhantnlad@gmail.com" class="cta-link">
+			Get in touch
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+			</svg>
+		</a>
+	</div>
+</section>
 
 <style>
-	aside {
+	.cta {
+		border-top: 1px solid var(--gray-800);
+		padding: 4rem 0;
+	}
+
+	.cta-inner {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 3rem;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		gap: 1.5rem;
+		text-align: center;
 	}
 
 	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
+		font-size: var(--text-2xl);
+	}
+
+	.cta-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: var(--text-base);
+		font-weight: 500;
+		color: var(--gray-0);
+		padding: 0.75rem 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: var(--radius-full);
+		transition: background var(--transition), border-color var(--transition);
+	}
+
+	.cta-link:hover {
+		background: var(--accent-subtle);
+		border-color: var(--gray-700);
 	}
 
 	@media (min-width: 50em) {
-		aside {
-			padding: 7.5rem;
+		.cta-inner {
 			flex-direction: row;
-			flex-wrap: wrap;
 			justify-content: space-between;
-		}
-
-		h2 {
-			font-size: var(--text-3xl);
 			text-align: left;
 		}
 	}

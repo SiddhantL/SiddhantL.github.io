@@ -1,11 +1,11 @@
 ---
-title: MediaMinds Text-to-Video Generator
+title: MediaMinds
 slug: mediaminds
 publishDate: 2023-05-01 00:00:00
 img: /assets/mediaminds.png
 img_alt: An AI-generated video timeline being rendered from text
 description: |
-  Automated text-to-video generation using FlanT5, Stable Diffusion, and Google TTS — delivering media-ready content in under 3 minutes.
+  Text-to-video pipeline that turns articles into fully rendered 90-second videos in under 3 minutes. FlanT5 + Stable Diffusion + Google TTS.
 tags:
   - AI
   - Video
@@ -23,12 +23,8 @@ video:
 
 ---
 
-MediaMinds was my final-year capstone project, focused on automating video generation from raw text prompts. I worked with a team of three to design a complete pipeline that could take a textual blog post or news article and output a visually rich, synchronized video.
+Final-year capstone. Feed it a blog post or news article, get a narrated video back in under 3 minutes.
 
-The primary use case was critical: enabling rapid storytelling from pure text inputs. In situations where immediate dissemination of important information is necessary — such as breaking news, announcements, or educational briefs — MediaMinds allowed content creators to instantly transform written material into engaging video formats without manual video editing. This capability was especially valuable for solo journalists, small media houses, and organizations aiming to expand reach through visual media.
+The pipeline: Flan-T5 for summarization, Selenium for context scraping, Stable Diffusion 1.5 for frame-by-frame visual generation, Google TTS plus a fine-tuned RVC voice model for narration. Mutagen handles metadata, FFMPEG stitches everything together with frame-level precision.
 
-Technically, we employed Flan-T5 for summarization, Selenium to scrape relevant context and keyword tags, and Stable Diffusion 1.5 to generate visuals frame-by-frame based on the extracted prompts. For audio narration, we used a combination of Google TTS and a custom fine-tuned RVC voice model to create natural-sounding, context-aware voiceovers. Asset synchronization was handled using Mutagen for metadata management, and videos were stitched together using FFMPEG with frame-level precision.
-
-The pipeline could generate fully rendered 90-second videos in under three minutes — a major improvement over traditional scripted workflows. We also built a React-based frontend where users could upload text, view generated drafts, and optionally tweak frames before final export.
-
-Through this project, I gained valuable experience coordinating multi-modal generative AI workflows, optimizing high-throughput media pipelines, and designing user-friendly interfaces for complex backend systems. MediaMinds showed me how generative AI can empower small teams and independent creators to deliver professional-quality content at unprecedented speed and scale.
+Built a React frontend where users could upload text, preview generated frames, and tweak before export. The whole thing was designed for solo journalists, small media teams, and anyone who needs video content but doesn't have an editing team.

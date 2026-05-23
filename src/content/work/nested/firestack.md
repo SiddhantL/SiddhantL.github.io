@@ -1,11 +1,11 @@
 ---
-title: FireStack Student Dashboard Web App
+title: FireStack
 slug: firestack
 publishDate: 2024-09-01 00:00:00
 img: /assets/firestack.png
 img_alt: A clean dashboard showing student tasks and calendars
 description: |
-  Built a productivity dashboard for students integrating calendars, career tools, and assignment tracking into a centralized platform.
+  Student productivity dashboard with calendars, deadline tracking, career tools, and reminders. Flask backend, VanillaJS frontend.
 tags:
   - Web
   - Productivity
@@ -18,14 +18,11 @@ skills:
   - simple-icons:python
   - simple-icons:firebase
   - mdi:clipboard-text
+hidden: true
 video:
   - https://www.youtube.com/embed/sRTDMGi53kg?si=qORvYtykB2ncJRYD
 ---
 
-FireStack is a productivity dashboard web app designed to help students manage their academic and career goals. It centralizes deadlines, to-dos, event calendars, and goal tracking into a responsive, easy-to-navigate interface.
+Productivity dashboard that centralizes deadlines, to-dos, event calendars, and goal tracking for students. Built with HTML/CSS/VanillaJS on the frontend and Flask on the backend, with full user auth and role-based access control.
 
-The app was built using HTML, CSS and VanillaJS for the frontend and Flask for the backend. I implemented full user auth, role-based access control, and modularized the backend into microservices — separating the calendar, notification, and task modules.
-
-Students could create recurring deadlines, sync with external calendars, and get reminders before key events. The app also included a “career mode” feature with resume upload, interview tracker, and resource bookmarking.
-
-This project improved my backend design chops, introduced me to event-driven architecture, and forced me to design for scale while retaining frontend responsiveness. It also helped me understand how to build platforms that users want to return to every day.
+The backend was split into separate modules for calendar, notifications, and tasks. Students could create recurring deadlines, sync external calendars, and get reminders. Also included a "career mode" with resume upload, interview tracker, and resource bookmarking.

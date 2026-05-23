@@ -5,7 +5,7 @@ publishDate: 2020-03-01 00:00:00
 img: /assets/safedistancing.jpg
 img_alt: A heatmap overlay of a crowded area on a mobile screen
 description: |
-  A predictive Android application leveraging DBSCAN and LSTM to forecast and visualize venue crowding in real-time. Designed to promote public safety during COVID-19.
+  Android app that predicted venue crowding in real-time using DBSCAN clustering and LSTM forecasting. Built during COVID, scaled to 10K+ concurrent users.
 tags:
   - Android
   - ML
@@ -21,14 +21,10 @@ video:
   - https://www.youtube.com/embed/XP5uQdw3YaU?si=Z8UHcZ3xraDRnkyD
 ---
 
-The Safe Distancing app was born out of a global need — empowering people to make smarter, safer decisions in public spaces during the height of the COVID-19 pandemic. Unlike typical crowd monitoring apps that simply aggregate GPS data, Safe Distancing pushes the boundaries by integrating unsupervised learning (DBSCAN) with temporal prediction models (LSTM) to detect hotspots and forecast future congestion.
+Built during the height of COVID to help people avoid crowded public spaces. The app combined DBSCAN for unsupervised hotspot detection with an LSTM model for predicting future congestion, all running on-device via TensorFlow Lite.
 
-The app functions entirely on-device, prioritizing user privacy and enabling real-time responsiveness even in areas with limited internet connectivity. Using user location history and anonymized background data, the system clusters behavioral patterns to distinguish between normal foot traffic and crowd formation events. The integration of Google’s Popular Times dataset with live pinging further enhances the contextual accuracy of the model.
+Users got dynamic heatmaps, risk zones, and predicted density for both their current location and where they were heading. The LSTM was trained on anonymized location history and Google Popular Times data, then converted to TFLite for low-latency mobile inference.
 
-I trained and converted the LSTM model into a TensorFlow Lite format to support low-latency predictions directly on Android devices. A custom-built visualization component presents users with dynamic heatmaps, risk zones, and predicted future density — not just for their current location but also for destinations they might be heading to. This predictive layer proved essential during early reopening phases when individuals sought safe ways to re-enter public life.
+Backend was Firebase Cloud Firestore for historical pattern logging, with geofencing that warned users before entering high-density zones. The architecture handled 10K+ concurrent users with minimal backend load since most of the compute happened on the phone.
 
-Under the hood, I relied on Firebase Cloud Firestore for scalable logging of historical patterns, A/B tested different alert mechanisms (push vs banner), and integrated geofencing features that warned users before they entered predefined danger zones. The architecture supported over 10,000 concurrent users with negligible backend latency due to lean frontend logic and robust data sync management.
-
-This project was not just an engineering challenge — it became a design statement on how mobile systems can proactively protect lives. The UI embraced minimalism to focus attention on actionable insights. The app was featured in my my university orientation event as a key project and sparked interdisciplinary collaborations across epidemiology and behavioral research teams based on the anaonymized data it collected.
-
-Above all, Safe Distancing proved that thoughtful software design can serve as a frontline tool in crisis response — and that machine learning doesn’t have to live in the cloud to be effective in the real world.
+The app was featured at my university orientation and led to collaborations with epidemiology and behavioral research teams who used the anonymized data for their own studies.

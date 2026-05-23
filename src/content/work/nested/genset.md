@@ -1,11 +1,11 @@
 ---
-title: Generator Monitoring System with GSM Telemetry and Cloud Integration
+title: Generator Monitoring System
 slug: genset
 publishDate: 2023-08-01 00:00:00
 img: /assets/generator.png
 img_alt: A monitoring dashboard showing real-time generator metrics from GSM data
 description: |
-  Built a full-stack generator monitoring system that relayed real-time GSM data across cloud infrastructure, providing live alerts, visualization, and remote control through mobile apps.
+  Full-stack industrial monitoring system. Firmware collects 77 metrics from generators, transmits via GSM, visualized in real-time on a mobile app.
 tags:
   - IoT
   - Cloud
@@ -27,14 +27,10 @@ video:
   - https://www.youtube.com/embed/_-isff31S4s?si=xU3lwYk6cKfezNIB
 ---
 
-This project involved building a fully functional generator monitoring system from scratch, interfacing embedded hardware with scalable cloud-based infrastructure. At the hardware level, I programmed the chipset of the generator in C to collect and transmit 77 critical operational metrics via a GSM module. These metrics included temperature, oil pressure, vibration signatures, fuel levels, and system fault codes.
+Programmed the generator chipset in C to collect and transmit 77 operational metrics (temperature, oil pressure, vibration, fuel, fault codes) via GSM every 2 seconds. Deployed across all clients of the company, each running multiple gensets independently.
 
-The system was deployed across all clients of the company, with each client owning multiple gensets operating independently. Each genset transmitted telemetry data every 2 seconds, resulting in a high-volume, low-latency data flow that demanded robust and efficient backend handling.
+Data hit a custom ASP.NET Core API on EC2 behind a reverse proxy, then got parsed and stored in a time-series PostgreSQL schema on RDS optimized for high-write throughput and fast historical queries.
 
-The data was relayed to a custom-built API endpoint developed in ASP.NET Core, running on an EC2 instance hosted on AWS. I set up a reverse proxy to securely manage incoming traffic and ensure reliable uptime. Incoming telemetry was parsed, processed, and stored in a time-series schema inside a PostgreSQL database hosted on AWS RDS, optimized for fast retrieval and historical analysis.
+Started with a native Android app in Java for monitoring, then rebuilt it in React Native when the system scaled and needed cross-platform support. Dashboards, push notifications for critical thresholds, and remote diagnostics.
 
-The visualization layer was originally designed as a native Android app using Java, providing real-time monitoring, alert generation, and historical trend analysis. As the system scaled and users demanded cross-platform compatibility, I rebuilt the app in React Native, ensuring seamless functionality across both Android and iOS devices. The app featured detailed dashboards, push notifications for critical thresholds, and remote diagnostic capabilities.
-
-Key challenges included optimizing GSM transmission reliability under fluctuating network conditions, tuning the database for high-write throughput, and ensuring fault-tolerant communication between embedded hardware and cloud endpoints. I implemented retry logic at the firmware level, health-checks at the API level, and failover policies for the database to maintain robustness. Load testing and dynamic resource scaling on AWS were introduced to handle bursts in data traffic from fleets of gensets operating simultaneously.
-
-This project significantly deepened my expertise in embedded systems, network programming, cloud deployments, and mobile app development. Building the entire data pipeline end-to-end — from physical sensors embedded in machinery to real-time user notifications — provided valuable experience in designing scalable, fault-tolerant architectures for industrial-grade applications.
+The hard parts: GSM reliability under bad network conditions, tuning the database for burst writes from entire fleets transmitting simultaneously, and keeping the whole pipeline fault-tolerant with retry logic at the firmware level and failover policies on the backend.

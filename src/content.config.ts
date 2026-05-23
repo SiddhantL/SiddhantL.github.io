@@ -3,7 +3,6 @@ import { defineCollection, z } from 'astro:content';
 
 export const collections = {
 	work: defineCollection({
-		// Load Markdown files in the src/content/work directory.
 		loader: glob({ base: './src/content/work', pattern: '**/*.md', }),
 		schema: z.object({
 			title: z.string(),
@@ -15,6 +14,9 @@ export const collections = {
 			skills: z.array(z.string()).optional(),
 			gallery: z.array(z.string()).optional(),
 			video: z.array(z.string()).optional(),
+			repo: z.string().optional(),
+			demo: z.string().optional(),
+			hidden: z.boolean().optional(),
 		}),
 	}),
 };

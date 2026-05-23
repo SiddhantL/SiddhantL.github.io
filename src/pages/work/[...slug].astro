@@ -2,8 +2,6 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
-import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 import { render } from 'astro:content';
 
@@ -24,454 +22,222 @@ const { Content } = await render(entry);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-	<div class="stack gap-20">
-		<div class="stack gap-15">
-			<header>
-				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
-					<Hero title={entry.data.title} align="start">
-						<div class="details">
-							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-							</div>
-							<p class="description">{entry.data.description}</p>
-						</div>
-					</Hero>
+	<main class="wrapper">
+		<article>
+			<header class="article-header">
+				<a class="back-link" href="/work/">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+					All work
+				</a>
+				<h1>{entry.data.title}</h1>
+				<p class="description">{entry.data.description}</p>
+				<div class="tags">
+					{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 				</div>
+				{(entry.data.repo || entry.data.demo) && (
+					<div class="links">
+						{entry.data.repo && (
+							<a href={entry.data.repo} target="_blank" rel="noopener" class="ext-link">GitHub</a>
+						)}
+						{entry.data.demo && (
+							<a href={entry.data.demo} target="_blank" rel="noopener" class="ext-link">Demo</a>
+						)}
+					</div>
+				)}
 			</header>
 
-			<main class="wrapper">
-				<div class="stack gap-10 content">
-					<!-- Gallery or Single Image -->
-					{entry.data.gallery && entry.data.gallery.length > 1 ? (
-<div class="embla">
-  <div class="embla__viewport">
-    <div class="embla__container">
-      {entry.data.gallery.map((img) => (
-        <div class="embla__slide">
-          <img src={img} alt={entry.data.img_alt || ''} loading="lazy" />
-        </div>
-      ))}
-    </div>
-  </div>
-  <button class="embla__button embla__button--prev">‹</button>
-  <button class="embla__button embla__button--next">›</button>
-
-  <div class="embla__dots"></div> <!-- ✅ dots outside viewport -->
-</div>
-
-
-
-) : (
-  entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} loading="lazy" />
-)}
-
-
-
-					<!-- Markdown Description -->
-					<div class="content">
-						<Content />
-					</div>
-
-					<!-- YouTube Videos -->
-					{entry.data.video && (
-						<div class="videos">
-							{entry.data.video.map((url) => (
-								<iframe
-									src={url}
-									width="100%"
-									height="315"
-									frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen
-									loading="lazy"
-								></iframe>
-							))}
-						</div>
-					)}
+			{entry.data.gallery && entry.data.gallery.length > 1 ? (
+				<div class="gallery">
+					{entry.data.gallery.map((img) => (
+						<img src={img} alt={entry.data.img_alt || ''} loading="lazy" class="gallery-image" />
+					))}
 				</div>
-			</main>
-		</div>
+			) : (
+				entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} loading="lazy" class="hero-image" />
+			)}
+
+			<div class="prose">
+				<Content />
+			</div>
+
+			{entry.data.video && (
+				<div class="videos">
+					{entry.data.video.map((url) => (
+						<iframe
+							src={url}
+							width="100%"
+							height="400"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+					))}
+				</div>
+			)}
+		</article>
 
 		<ContactCTA />
-	</div>
+	</main>
 </BaseLayout>
 
 <style>
-.embla {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.embla__viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-.embla__container {
-  display: flex;
-  user-select: none;
-  /* Prevent iOS momentum scrolling */
-  -webkit-overflow-scrolling: touch;
-  backface-visibility: hidden;
-}
-
-.embla__slide {
-  position: relative;
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 13/9; /* ✅ Forces nice rectangular shape for all slides */
-  background: var(--background-primary);
-  padding: 0.5rem;
-}
-
-.embla__slide img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 1rem;
-  object-fit: contain;
-  object-position: center;
-  border: 1px solid var(--gray-800);
-  box-shadow: var(--shadow-sm);
-  background: var(--gradient-subtle);
-  pointer-events: none;
-  
-}
-
-/* 🚀 Buttons */
-.embla__button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.2s ease;
-}
-.embla__button:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.embla__button:focus {
-  outline: none; /* Prevent blue outline focus */
-}
-
-.embla__button--prev {
-  left: 1rem;
-}
-
-.embla__button--next {
-  right: 1rem;
-}
-
-@media (max-width: 600px) {
-  .embla__button {
-    display: none; /* Hide buttons on mobile, swipe instead */
-  }
-}
-
-header {
-	padding-bottom: 2.5rem;
-	border-bottom: 1px solid var(--gray-800);
-}
-
-.back-link {
-	display: none;
-}
-
-.details {
-	display: flex;
-	flex-direction: column;
-	padding: 0.5rem;
-	gap: 1.5rem;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.tags {
-	display: flex;
-	gap: 0.5rem;
-}
-
-.description {
-	font-size: var(--text-lg);
-	max-width: 54ch;
-}
-
-.content {
-	max-width: 65ch;
-	margin-inline: auto;
-	font-size: var(--text-base);
-	line-height: 1.7;
-}
-
-.content > :global(* + *) {
-	margin-top: 1rem;
-}
-
-.content :global(p) {
-	color: var(--gray-300);
-}
-
-.content :global(h1),
-.content :global(h2) {
-	font-size: var(--text-xl);
-	margin: 2rem 0 1rem 0;
-	color: var(--gray-0);
-}
-
-.content :global(h3),
-.content :global(h4),
-.content :global(h5) {
-	font-size: var(--text-lg);
-	margin: 1.5rem 0 0.75rem 0;
-	color: var(--gray-0);
-}
-
-.content :global(strong) {
-	font-size: var(--text-lg);
-	color: var(--gray-0);
-	display: block;
-	margin-top: 2rem;
-	margin-bottom: 0.75rem;
-}
-
-.content :global(img:not([style*="border-radius"])) {
-	border-radius: 1.5rem;
-	box-shadow: var(--shadow-sm);
-	background: var(--gradient-subtle);
-	border: 1px solid var(--gray-800);
-}
-
-/* 👇 Gallery Image Layout */
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: center;
-}
-
-.gallery img {
-	width: 100%;
-	max-width: 20rem;
-	border-radius: 1rem;
-	box-shadow: var(--shadow-sm);
-}
-
-/* 👇 YouTube Videos Layout */
-.videos {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	margin-top: 2rem;
-}
-
-iframe {
-	border-radius: 1rem;
-	box-shadow: var(--shadow-sm);
-	background: var(--gradient-subtle);
-}
-
-.content :global(blockquote) {
-	font-size: var(--text-lg);
-	font-family: var(--font-brand);
-	font-weight: 600;
-	line-height: 1.1;
-	padding-inline-start: 1.5rem;
-	border-inline-start: 0.25rem solid var(--accent-dark);
-	color: var(--gray-0);
-}
-
-.back-link,
-.content :global(a) {
-	text-decoration: 1px solid underline transparent;
-	text-underline-offset: 0.25em;
-	transition: text-decoration-color var(--theme-transition);
-}
-
-.back-link:hover,
-.back-link:focus,
-.content :global(a:hover),
-.content :global(a:focus) {
-	text-decoration-color: currentColor;
-}
-
-@media (min-width: 50em) {
-	.back-link {
-		display: block;
-		align-self: flex-start;
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding-top: 3rem;
+		padding-bottom: 0;
 	}
 
-	.details {
-		flex-direction: row;
+	article {
+		display: flex;
+		flex-direction: column;
 		gap: 2.5rem;
+		max-width: 48rem;
 	}
 
-	.content :global(blockquote) {
-		font-size: var(--text-2xl);
+	.article-header {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
-}
 
-.embla {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
+	.back-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		transition: color var(--transition);
+		width: fit-content;
+	}
 
-.embla__viewport {
-  overflow: hidden;
-  width: 100%;
-}
+	.back-link:hover {
+		color: var(--gray-0);
+	}
 
-.embla__container {
-  display: flex;
-  user-select: none;
-}
+	h1 {
+		font-size: var(--text-3xl);
+	}
 
-.embla__slide {
-  position: relative;
-  min-width: 100%;
-  padding: 10px;
-}
+	.description {
+		font-size: var(--text-md);
+		color: var(--gray-400);
+		line-height: 1.6;
+		max-width: 54ch;
+	}
 
-.embla__slide img {
-  width: 100%;
-  border-radius: 1rem;
-  box-shadow: var(--shadow-sm);
-  background: var(--gradient-subtle);
-}
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+	}
 
-.embla__prev,
-.embla__next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--gray-999);
-  color: var(--gray-0);
-  border: none;
-  font-size: 2rem;
-  padding: 0.25em 0.5em;
-  border-radius: 9999px;
-  cursor: pointer;
-  z-index: 5;
-}
+	.links {
+		display: flex;
+		gap: 1rem;
+	}
 
-.embla__prev {
-  left: -2rem;
-}
+	.ext-link {
+		font-size: var(--text-sm);
+		font-weight: 500;
+		color: var(--gray-0);
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: var(--radius-full);
+		transition: background var(--transition), border-color var(--transition);
+	}
 
-.embla__next {
-  right: -2rem;
-}
+	.ext-link:hover {
+		background: var(--accent-subtle);
+		border-color: var(--gray-700);
+	}
 
-/* Arrows basic */
-.embla__button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.2s ease;
-}
+	.hero-image {
+		width: 100%;
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--gray-800);
+	}
 
-.embla__button:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
+	.gallery {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: 1fr;
+	}
 
-.embla__button--prev {
-  left: 1rem;
-}
+	@media (min-width: 40em) {
+		.gallery {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 
-.embla__button--next {
-  right: 1rem;
-}
+	.gallery-image {
+		width: 100%;
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--gray-800);
+	}
 
-/* Default: hide dots */
-.embla__dots {
-  display: none;
-}
+	.prose {
+		font-size: var(--text-base);
+		line-height: 1.7;
+		color: var(--gray-300);
+	}
 
-/* ✅ On mobile: show dots */
-@media (max-width: 600px) {
-  .embla__dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
-  }
-}
+	.prose :global(* + *) {
+		margin-top: 1rem;
+	}
 
+	.prose :global(h1),
+	.prose :global(h2) {
+		font-size: var(--text-xl);
+		margin: 2rem 0 1rem;
+		color: var(--gray-0);
+	}
 
+	.prose :global(h3),
+	.prose :global(h4) {
+		font-size: var(--text-lg);
+		margin: 1.5rem 0 0.75rem;
+		color: var(--gray-0);
+	}
+
+	.prose :global(strong) {
+		color: var(--gray-0);
+	}
+
+	.prose :global(a) {
+		color: var(--gray-0);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.prose :global(blockquote) {
+		padding-left: 1rem;
+		border-left: 2px solid var(--gray-700);
+		color: var(--gray-300);
+		font-style: italic;
+	}
+
+	.prose :global(img) {
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--gray-800);
+	}
+
+	.videos {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	iframe {
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--gray-800);
+	}
+
+	@media (min-width: 50em) {
+		h1 {
+			font-size: var(--text-4xl);
+		}
+	}
 </style>
-
-<script type="module">
-import EmblaCarousel from 'https://cdn.skypack.dev/embla-carousel@8.0.0';
-
-document.addEventListener('DOMContentLoaded', () => {
-  const emblaRoot = document.querySelector('.embla');
-  const viewport = emblaRoot.querySelector('.embla__viewport');
-  const prevButton = emblaRoot.querySelector('.embla__button--prev');
-  const nextButton = emblaRoot.querySelector('.embla__button--next');
-  const dotsContainer = emblaRoot.querySelector('.embla__dots');
-
-  if (viewport && prevButton && nextButton && dotsContainer) {
-    const embla = EmblaCarousel(viewport, { loop: true });
-
-    prevButton.addEventListener('click', () => embla.scrollPrev());
-    nextButton.addEventListener('click', () => embla.scrollNext());
-
-    const dots = embla.scrollSnapList().map((_, index) => {
-      const dot = document.createElement('button');
-      dot.className = 'embla__dot';
-      
-      // ✅ Base dot styles set directly
-      dot.style.width = '10px';
-      dot.style.height = '10px';
-      dot.style.borderRadius = '50%';
-      dot.style.margin = '0 5px';
-      dot.style.backgroundColor = 'var(--gray-600)'; // Inactive color
-      dot.style.border = 'none';
-      dot.style.cursor = 'pointer';
-      dot.style.transition = 'background-color 0.3s ease, transform 0.3s ease';
-      dot.style.padding = '0';
-      dot.style.flexShrink = '0';
-
-      dot.addEventListener('click', () => embla.scrollTo(index));
-      dotsContainer.appendChild(dot);
-      return dot;
-    });
-
-    const updateDots = () => {
-      const selectedIndex = embla.selectedScrollSnap();
-      dots.forEach((dot, index) => {
-        if (index === selectedIndex) {
-          dot.style.backgroundColor = 'var(--accent-regular)'; // Active dot color
-        } else {
-          dot.style.backgroundColor = 'var(--gray-600)'; // Inactive dot color
-        }
-      });
-    };
-
-    embla.on('select', updateDots);
-    embla.on('init', updateDots);
-  }
-});
-</script>

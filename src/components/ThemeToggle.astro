@@ -1,69 +1,46 @@
 ---
-import Icon from './Icon.astro';
 ---
 
 <theme-toggle>
-	<button>
-		<span class="sr-only">Dark theme</span>
-		<span class="icon light"><Icon icon="sun" /></span>
-		<span class="icon dark"><Icon icon="moon-stars" /></span>
+	<button aria-label="Toggle theme">
+		<svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+		</svg>
+		<svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+		</svg>
 	</button>
 </theme-toggle>
 
 <style>
 	button {
 		display: flex;
-		border: 0;
-		border-radius: 999rem;
-		padding: 0;
-		background-color: var(--gray-999);
-		box-shadow: inset 0 0 0 1px var(--accent-overlay);
-		cursor: pointer;
-	}
-
-	.icon {
-		z-index: 1;
-		position: relative;
-		display: flex;
-		padding: 0.5rem;
+		align-items: center;
+		justify-content: center;
 		width: 2rem;
 		height: 2rem;
-		font-size: 1rem;
-		color: var(--accent-overlay);
+		border: none;
+		border-radius: var(--radius-sm);
+		background: transparent;
+		color: var(--gray-400);
+		cursor: pointer;
+		transition: color var(--transition);
 	}
 
-	.icon.light::before {
-		content: '';
-		z-index: -1;
-		position: absolute;
-		inset: 0;
-		background-color: var(--accent-regular);
-		border-radius: 999rem;
+	button:hover {
+		color: var(--gray-0);
 	}
 
-	:global(.theme-dark) .icon.light::before {
-		transform: translateX(100%);
+	.icon-moon {
+		display: none;
 	}
 
-	:global(.theme-dark) .icon.dark,
-	:global(html:not(.theme-dark)) .icon.light,
-	button[aria-pressed='false'] .icon.light {
-		color: var(--accent-text-over);
+	:global(.theme-dark) .icon-sun {
+		display: none;
 	}
 
-	@media (prefers-reduced-motion: no-preference) {
-		.icon,
-		.icon.light::before {
-			transition:
-				transform var(--theme-transition),
-				color var(--theme-transition);
-		}
-	}
-
-	@media (forced-colors: active) {
-		.icon.light::before {
-			background-color: SelectedItem;
-		}
+	:global(.theme-dark) .icon-moon {
+		display: block;
 	}
 </style>
 
@@ -71,24 +48,13 @@ import Icon from './Icon.astro';
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
-
 			const button = this.querySelector('button')!;
-
-			/** Set the theme to dark/light mode. */
 			const setTheme = (dark: boolean) => {
 				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
-				button.setAttribute('aria-pressed', String(dark));
 			};
-
-			// Toggle the theme when a user clicks the button.
-			button.addEventListener('click', () => setTheme(!this.isDark()));
-
-			// Initialize button state to reflect current theme.
-			setTheme(this.isDark());
-		}
-
-		isDark() {
-			return document.documentElement.classList.contains('theme-dark');
+			button.addEventListener('click', () => {
+				setTheme(!document.documentElement.classList.contains('theme-dark'));
+			});
 		}
 	}
 	customElements.define('theme-toggle', ThemeToggle);
