@@ -1,7 +1,7 @@
 ---
 title: Iris
 slug: iris
-publishDate: 2025-01-15 00:00:00
+publishDate: 2025-07-15 00:00:00
 img: /assets/iris-gallery.png
 img_alt: Iris team
 description: |
