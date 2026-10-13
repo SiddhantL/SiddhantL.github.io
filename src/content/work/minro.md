@@ -27,6 +27,4 @@ The product brings together customer profiles, retention analytics, and configur
 
 We also work directly with our clients' teams to understand their products and workflows. That means defining meaningful activation and retention metrics, connecting the right data, and shaping customer success workflows around the people using their product.
 
-My work as CTO spans data integrations, event-driven agents, personalized communication, and outcome measurement. The platform is built with FastAPI, PostgreSQL, background workers, and React.
-
 Backed by Y Combinator (F25).
