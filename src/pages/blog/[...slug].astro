@@ -31,7 +31,7 @@ const oaths = [
 	"Authentically written by a guy who could have had AI write it in 4 seconds but chose to suffer instead.",
 	"My brain, my keyboard, my bad jokes. AI just made sure I didn't publish the word 'teh' fourteen times.",
 ];
-const oath = oaths[Math.floor(Math.random() * oaths.length)];
+const oath = entry.data.footer?.trim() || oaths[Math.floor(Math.random() * oaths.length)];
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>

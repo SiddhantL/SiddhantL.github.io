@@ -113,6 +113,7 @@ async function syncPosts() {
     const title = getProperty(page, "Title") || "Untitled";
     const description = getProperty(page, "Description") || "";
     const publishDate = getProperty(page, "Publish Date") || new Date().toISOString().split("T")[0];
+    const footer = getProperty(page, "Footer");
     const tags = getProperty(page, "Tags") || [];
     const slug = slugify(title);
 
@@ -146,6 +147,9 @@ async function syncPosts() {
       `title: "${title.replace(/"/g, '\\"')}"`,
       `description: "${description.replace(/"/g, '\\"')}"`,
       `publishDate: ${publishDate}`,
+      ...(typeof footer === "string" && footer.trim()
+        ? [`footer: ${JSON.stringify(footer.trim())}`]
+        : []),
       tagsYaml,
       "---",
     ].join("\n");

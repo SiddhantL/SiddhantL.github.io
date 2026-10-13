@@ -8,6 +8,7 @@ export const collections = {
 			title: z.string(),
 			description: z.string(),
 			publishDate: z.coerce.date(),
+			footer: z.string().optional(),
 			tags: z.array(z.string()).optional(),
 		}),
 	}),
