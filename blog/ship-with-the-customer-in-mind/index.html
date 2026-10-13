@@ -28,13 +28,13 @@ All posts
 <p>Watching someone work gives you a different understanding of their problem from discussing a feature on a call. You see the process your product needs to fit into, the information they have to gather before using it, and the work they still have to do afterward. You also see the places where your technically sound implementation makes their day harder.</p>
 <p>I began to understand what my co-founder had been asking of me. I needed to understand the customer’s problem well enough to explain why our implementation belonged in their workflow.</p>
 <p>The faster we can ship, the more that judgment matters. Speed lets us act on a decision sooner. We still have to make a good decision.</p>
-<h2 id="what-i-mean-by-customer-success">What I mean by customer success</h2>
-<p>Customer success, to me, means helping customers get the value they came to your product for.</p>
+<h2 id="what-is-customer-success">What is customer success?</h2>
+<p>Customer success means helping customers get the value they came to your product for.</p>
 <p>There is some history behind that idea. Research places customer success management within an evolution of customer relationship management, customer experience, and customer engagement. A 2020 paper describes its focus on proactively helping customers realize value from what they use.<sup><a href="#source-1">1</a></sup></p>
 <p>Support is an important part of this. It usually begins with a question or a problem that needs resolving. Customer success also asks whether the customer is making progress before they have a reason to contact us.</p>
-<p>The distinction is useful, but it is not an absolute boundary. Support can be proactive too. I think of it as one pillar of the broader responsibility to help customers succeed, regardless of how a company organizes its teams.</p>
-<p>As an engineer, I increasingly see this responsibility showing up in ordinary product decisions: what we instrument, how onboarding works, how someone reaches us, and what evidence earns a place on the roadmap.</p>
-<p>I dislike advice that stops at “have more customer empathy.” These are the practices that make that idea actionable for me.</p>
+<p>The distinction is useful, but it is not an absolute boundary. Support can be proactive too. Support is one pillar of the broader responsibility to help customers succeed, regardless of how a company organizes its teams.</p>
+<p>Engineering makes that responsibility concrete through ordinary product decisions: what we instrument, how onboarding works, how someone reaches us, and what evidence earns a place on the roadmap.</p>
+<p>I dislike advice that stops at “have more customer empathy.” These are the practices that make that idea actionable.</p>
 <h2 id="make-it-easy-for-customers-to-reach-you">Make it easy for customers to reach you</h2>
 <p>When we were building Iris, we understood that we needed a direct line to our users. We did not yet understand the best way to create one.</p>
 <p>So we put my co-founder’s phone number in the app.</p>
@@ -45,24 +45,24 @@ All posts
 <p>Email fit Iris better because users could already ask our in-app agent to send emails. Reporting a bug or sending us feedback could happen through a capability they were already using.</p>
 <p>YC also pushed us to take more user calls. We used PostHog to understand which features people had tried, then chose users whose experiences could help us answer specific questions.</p>
 <p>The channel should fit the product and its users. If your gaming community already spends time in Discord, a server might be useful. But requiring everyone to join that server just to get help creates another step, especially for someone who has barely started using your product.</p>
-<p>I would keep an easy route from the product itself, then use the contact channels people have provided and agreed to hear from us through. As conversations spread across channels, someone still needs to own each issue and preserve its history. Aggregating the messages can help; ownership and follow-through are what make it useful.</p>
+<p>Keep an easy route from the product itself, then use the contact channels people have provided and agreed to hear from us through. As conversations spread across channels, someone still needs to own each issue and preserve its history. Aggregating the messages can help; ownership and follow-through are what make it useful.</p>
 <h2 id="use-analytics-to-notice-the-people-who-never-write-in">Use analytics to notice the people who never write in</h2>
 <p>One reason I connect engineering so closely with customer success is that we already have ways to detect some bad experiences.</p>
 <p>An error tracker might show a failed request. A funnel might show people abandoning a step. Product analytics might show someone repeatedly trying a feature without completing the action it exists to help them perform. PostHog’s funnel tools, for example, let you inspect the people who completed or dropped out of a step and investigate further.<sup><a href="#source-2">2</a></sup></p>
 <p>Those signals give us a reason to look more closely. They do not tell us the whole story.</p>
 <p>Suppose someone starts an export, encounters an error, and never completes it. That is a better starting point for outreach than a generic “How are you finding the app?”</p>
 <p>We can acknowledge the failure, explain what we know, and help them finish the task. We should still check that they are affected and that another message would be useful.</p>
-<p>I do not want reporting a problem to be the only way a customer can get help, particularly when we already have evidence that something went wrong.</p>
+<p>Reporting a problem should not be the only way a customer can get help, particularly when we already have evidence that something went wrong.</p>
 <p>The messages that do arrive also need interpretation. A billing issue gives someone an immediate reason to contact us. A detailed feature request could come from a person who already gets considerable value, or from someone still trying to obtain the value they paid for.</p>
 <p>Both conversations matter. Neither tells us, by itself, how the rest of the customer base is doing.</p>
-<p>I want to hear from people who use the product deeply, people who get stuck, and people who quietly stop. Analytics helps us find them. Conversations help us understand what happened.</p>
+<p>We need to hear from people who use the product deeply, people who get stuck, and people who quietly stop. Analytics helps us find them. Conversations help us understand what happened.</p>
 <h2 id="build-support-around-a-path-to-resolution">Build support around a path to resolution</h2>
 <p>In conversations with customer success and support leaders, I have heard very different views on AI.</p>
 <p>Some teams use it to resolve straightforward requests immediately and send the harder cases to a human. Others distrust it enough that they would rather make a customer wait hours for a person than risk an unhelpful automated response.</p>
-<p>I understand the concern. I also think the outcome matters more than which kind of agent produces the answer.</p>
+<p>I understand the concern. The outcome matters more than which kind of agent produces the answer.</p>
 <p>A custom support workflow, including one built quickly with AI, can be a reasonable choice if it is <strong>implemented well</strong>.</p>
-<p>For me, that means the system can recognize its limits, escalate when necessary, preserve the customer’s context, and make it clear what happens next. If the AI keeps responding while a request that needs a human sits unattended, fast replies can coexist with very slow resolution.</p>
-<p>A few things I would expect from that workflow:</p>
+<p>That means the system must recognize its limits, escalate when necessary, preserve the customer’s context, and make it clear what happens next. If the AI keeps responding while a request that needs a human sits unattended, fast replies can coexist with very slow resolution.</p>
+<p>That workflow needs:</p>
 <ul>
 <li><strong>A useful acknowledgment.</strong> Confirm that the request has been received and explain the next step. A generic receipt is not a solution.</li>
 <li><strong>A realistic time for the next update.</strong> “We’ll update you by tomorrow at 3 p.m. Pacific” gives the customer something concrete. Promise an update if you cannot yet promise a resolution.</li>
@@ -71,16 +71,16 @@ All posts
 </ul>
 <p>The right timing depends on the product, the issue, and the channel. A critical failure needs different treatment from a routine question. An interface that looks like live chat should make it clear if help will actually arrive hours later.</p>
 <p>If the user leaves, notify them through an appropriate channel when there is a useful update. Do not expect them to return at precisely the moment your team becomes available.</p>
-<p>I also hesitate when I hear that customers do not provide enough information for automated support to work.</p>
+<p>A short first message is not a reason to assume automated support cannot work.</p>
 <p>There are several possible reasons for a short first message. The customer may not know which details matter. They may be in a hurry. They may also have learned from previous experiences that a long explanation gets them nowhere.</p>
 <p>I have been that customer. Sometimes the first message is a way of finding out whether anyone is listening.</p>
 <p>A good response can build enough trust to get the details needed to help. Where the product already has relevant information, we should avoid making the customer reconstruct it. Where information is genuinely missing, we should ask a specific question.</p>
 <h2 id="use-csat-as-one-signal">Use CSAT as one signal</h2>
 <p>A support leader once challenged me on how useful CSAT, or customer satisfaction score, really is.</p>
-<p>I would not take that to mean we should ignore it. I would take it as a warning about what we ask the score to represent.</p>
+<p>The problem is asking CSAT to represent more than it can.</p>
 <p>CSAT usually captures a reported reaction to a particular experience. It reflects the people who answer the survey, whose experiences may differ from those who do not. Qualtrics discusses this response bias and the limited detail a single rating can capture; IBM also notes that CSAT does not provide a complete picture of a customer’s ongoing relationship with the company.<sup><a href="#source-3">3</a>, <a href="#source-4">4</a></sup></p>
-<p>I would put that rating beside evidence of resolution: whether the issue was resolved, how long that took, whether the customer had to repeat themselves or reopen it, and whether they could subsequently complete the task.</p>
-<p>A friendly answer can earn a positive reaction. I still want to know whether it helped.</p>
+<p>Put that rating beside evidence of resolution: whether the issue was resolved, how long that took, whether the customer had to repeat themselves or reopen it, and whether they could subsequently complete the task.</p>
+<p>A friendly answer can earn a positive reaction. We still need to know whether it helped.</p>
 <h2 id="be-honest-about-activation-and-take-onboarding-seriously">Be honest about activation, and take onboarding seriously</h2>
 <p>At Minro, we help companies improve customer success through our product and by working directly with their teams. Retention is central to that work: are their users getting enough value from our clients’ products to keep coming back?</p>
 <p>That makes the definition of activation important.</p>
@@ -88,36 +88,36 @@ All posts
 <p>Those can be useful steps to measure. Whether one deserves to mean “activated” depends on what the customer has actually achieved by that point.</p>
 <p>For an email product, connecting an account might only be preparation. Completing the first useful email workflow could be closer to value. For another product, the meaningful milestone will be different.</p>
 <p>A stricter definition is useful when it better represents value. Making the bar arbitrarily higher does not make the metric more honest.</p>
-<p>I want us to be able to explain why the milestone matters and investigate whether people who reach it tend to continue getting value. A lower number can be useful if it reveals the part of the experience we need to improve.</p>
+<p>We need to explain why the milestone matters and investigate whether people who reach it tend to continue getting value. A lower number can be useful if it reveals the part of the experience we need to improve.</p>
 <p>Onboarding is part of that experience. It sets expectations, introduces the product, and helps someone reach the first useful result.</p>
-<p>I would measure completion, where people leave, how long steps take, and whether they reach that result afterward. Funnels can identify where to investigate, including the users who dropped out.<sup><a href="#source-2">2</a></sup> A long time on a screen might indicate confusion, but it could also be expected work. The number should lead to a question.</p>
-<p>I would treat onboarding as part of delivering the product’s value from the beginning.</p>
+<p>Measure completion, where people leave, how long steps take, and whether they reach that result afterward. Funnels can identify where to investigate, including the users who dropped out.<sup><a href="#source-2">2</a></sup> A long time on a screen might indicate confusion, but it could also be expected work. The number should lead to a question.</p>
+<p>Treat onboarding as part of delivering the product’s value from the beginning.</p>
 <h2 id="separate-early-value-from-ongoing-retention">Separate early value from ongoing retention</h2>
 <p>One dashboard can give the team a shared view, but it needs clear definitions and maintenance as the product changes.</p>
-<p>I would keep two questions visible:</p>
+<p>Keep two questions visible:</p>
 <ol>
 <li>Are new customers reaching value?</li>
 <li>Are established customers continuing to receive it?</li>
 </ol>
 <p>For a weekly subscription, the first seven days may be especially worth examining alongside the first renewal. Later usage and renewals answer a different question: whether the product has become useful enough to keep.</p>
-<p>A first-week activation funnel, a daily retention curve, and a subscription renewal rate measure different things. I would put them together where useful, with labels that make those differences explicit.</p>
+<p>A first-week activation funnel, a daily retention curve, and a subscription renewal rate measure different things. Put them together where useful, with labels that make those differences explicit.</p>
 <p>For each measure, write down who is included, what action counts, when the clock starts, and which time window applies. Analytics tools require these decisions: PostHog retention, for example, distinguishes a starting event from a returning event and offers different rules for when a return counts.<sup><a href="#source-5">5</a></sup></p>
 <p>Someone returning on Day 7 is not the same measure as someone returning at any point from Day 7 onward. Those definitions should stay consistent when comparing results.<sup><a href="#source-6">6</a></sup></p>
 <p>The age of the group matters too. A customer who signed up yesterday has not had an opportunity to reach Day 7. Incomplete observation windows need to remain distinguishable from completed ones; Amplitude explicitly marks incomplete retention data for this reason.<sup><a href="#source-6">6</a></sup></p>
 <p>This becomes particularly important when evaluating product changes.</p>
 <p>Suppose an onboarding bug affects people who sign up on Monday, and we fix it on Tuesday. The Monday customers still had that experience. The deployment does not erase it.</p>
-<p>I would record which customers were exposed, keep that group identifiable, and follow their later outcomes. Then I would compare relevant groups at the same age, accounting for other differences where possible.</p>
+<p>Record which customers were exposed, keep that group identifiable, and follow their later outcomes. Then compare relevant groups at the same age, accounting for other differences where possible.</p>
 <p>If Monday’s group has weaker Day 7 retention, that is a reason to investigate. It does not prove the bug caused the difference.</p>
 <p>The same discipline applies to a billing incident or a feature release. Record what happened, when it happened, and who encountered it. Follow those customers through the measures that matter instead of only looking at the graph on release day.</p>
 <p>When a definition changes, record that too. Otherwise an apparent improvement may come from changing who gets counted.</p>
 <h2 id="turn-customer-evidence-into-shipping-decisions">Turn customer evidence into shipping decisions</h2>
 <p>There is a familiar argument that customers cannot tell you what to build. The “faster horse” example usually appears somewhere in that conversation.</p>
-<p>I find it more useful as a prompt for investigation.</p>
-<p>If someone asks for a faster horse, speed is one hypothesis about their problem. I would still want to understand the journey: where they are going, what makes it difficult, and what a better result would change for them.</p>
+<p>The useful question is what the request tells us about the customer’s problem.</p>
+<p>If someone asks for a faster horse, speed is one hypothesis about their problem. The next step is to understand the journey: where they are going, what makes it difficult, and what a better result would change for them.</p>
 <p>The same applies to a feature request. The request is evidence worth taking seriously. Understanding the process behind it is what gives us room to find a useful solution.</p>
-<p>For example, suppose a customer asks for another dashboard. Before building it, I would want to see the decision they are trying to make. They might need a new view. They might need one reliable number, a timely alert, or an existing report delivered into the workflow they already use.</p>
+<p>For example, suppose a customer asks for another dashboard. Before building it, look at the decision they are trying to make. They might need a new view. They might need one reliable number, a timely alert, or an existing report delivered into the workflow they already use.</p>
 <p>That is the kind of understanding I started developing by working beside customers.</p>
-<p>To make it useful for prioritization, I would want each proposed change to answer five questions:</p>
+<p>Each proposed change should answer five questions:</p>
 <ol>
 <li><strong>What is the customer trying to accomplish?</strong> Describe the task and the process around it.</li>
 <li><strong>What is preventing it?</strong> Bring an observed workflow, a conversation, or product evidence.</li>
@@ -135,6 +135,6 @@ All posts
 <li><span id="source-4"></span>IBM, <a href="https://www.ibm.com/think/topics/csat-customer-satisfaction-score">What is CSAT?</a>.</li>
 <li><span id="source-5"></span>PostHog, <a href="https://posthog.com/docs/product-analytics/retention">Retention</a>.</li>
 <li><span id="source-6"></span>Amplitude, <a href="https://amplitude.com/docs/analytics/charts/retention-analysis/retention-analysis-interpret">Interpret your retention analysis</a>.</li>
-</ol> </div> <div class="oath" data-astro-cid-7jjqptxk> <span class="oath-icon" data-astro-cid-7jjqptxk>*</span> <p data-astro-cid-7jjqptxk>This post passed the Turing test. Mostly because the Turing test has low standards.</p> </div> </article> <section class="cta" data-astro-cid-rcdzuq3a> <div class="wrapper cta-inner" data-astro-cid-rcdzuq3a> <h2 data-astro-cid-rcdzuq3a>Let's work together</h2> <a href="mailto:siddhantnlad@gmail.com" class="cta-link" data-astro-cid-rcdzuq3a>
+</ol> </div> <div class="oath" data-astro-cid-7jjqptxk> <span class="oath-icon" data-astro-cid-7jjqptxk>*</span> <p data-astro-cid-7jjqptxk>No LLMs were harmed in the making of this post. One was mildly inconvenienced during proofreading.</p> </div> </article> <section class="cta" data-astro-cid-rcdzuq3a> <div class="wrapper cta-inner" data-astro-cid-rcdzuq3a> <h2 data-astro-cid-rcdzuq3a>Let's work together</h2> <a href="mailto:siddhantnlad@gmail.com" class="cta-link" data-astro-cid-rcdzuq3a>
 Get in touch
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-rcdzuq3a> <line x1="5" y1="12" x2="19" y2="12" data-astro-cid-rcdzuq3a></line><polyline points="12 5 19 12 12 19" data-astro-cid-rcdzuq3a></polyline> </svg> </a> </div> </section>  </main>  <footer data-astro-cid-sz7xmlte> <div class="wrapper footer-inner" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte>&copy; 2026 Siddhant Lad</p> <div class="links" data-astro-cid-sz7xmlte> <a href="mailto:siddhantnlad@gmail.com" data-astro-cid-sz7xmlte>Email</a> <a href="https://github.com/SiddhantL" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.linkedin.com/in/sidlad" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>LinkedIn</a> <a href="https://www.youtube.com/@siddhantlad" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>YouTube</a> </div> </div> </footer>  </div> <script type="module">addEventListener("load",()=>document.documentElement.classList.add("loaded"));</script>  </body> </html> 
