@@ -2,6 +2,7 @@
 title: "Ship with the customer in mind"
 description: "What working beside our customers taught me about customer success, engineering, and deciding what to ship."
 publishDate: 2026-10-13
+footer: "No LLMs were harmed in the making of this post. One was mildly inconvenienced during proofreading."
 tags:
   - Customer success
   - Engineering
@@ -29,10 +30,10 @@ I began to understand what my co-founder had been asking of me. I needed to unde
 The faster we can ship, the more that judgment matters. Speed lets us act on a decision sooner. We still have to make a good decision.
 
 
-## What I mean by customer success
+## What is customer success?
 
 
-Customer success, to me, means helping customers get the value they came to your product for.
+Customer success means helping customers get the value they came to your product for.
 
 
 There is some history behind that idea. Research places customer success management within an evolution of customer relationship management, customer experience, and customer engagement. A 2020 paper describes its focus on proactively helping customers realize value from what they use.<sup>[1](#source-1)</sup>
@@ -41,13 +42,13 @@ There is some history behind that idea. Research places customer success managem
 Support is an important part of this. It usually begins with a question or a problem that needs resolving. Customer success also asks whether the customer is making progress before they have a reason to contact us.
 
 
-The distinction is useful, but it is not an absolute boundary. Support can be proactive too. I think of it as one pillar of the broader responsibility to help customers succeed, regardless of how a company organizes its teams.
+The distinction is useful, but it is not an absolute boundary. Support can be proactive too. Support is one pillar of the broader responsibility to help customers succeed, regardless of how a company organizes its teams.
 
 
-As an engineer, I increasingly see this responsibility showing up in ordinary product decisions: what we instrument, how onboarding works, how someone reaches us, and what evidence earns a place on the roadmap.
+Engineering makes that responsibility concrete through ordinary product decisions: what we instrument, how onboarding works, how someone reaches us, and what evidence earns a place on the roadmap.
 
 
-I dislike advice that stops at “have more customer empathy.” These are the practices that make that idea actionable for me.
+I dislike advice that stops at “have more customer empathy.” These are the practices that make that idea actionable.
 
 
 ## Make it easy for customers to reach you
@@ -80,7 +81,7 @@ YC also pushed us to take more user calls. We used PostHog to understand which f
 The channel should fit the product and its users. If your gaming community already spends time in Discord, a server might be useful. But requiring everyone to join that server just to get help creates another step, especially for someone who has barely started using your product.
 
 
-I would keep an easy route from the product itself, then use the contact channels people have provided and agreed to hear from us through. As conversations spread across channels, someone still needs to own each issue and preserve its history. Aggregating the messages can help; ownership and follow-through are what make it useful.
+Keep an easy route from the product itself, then use the contact channels people have provided and agreed to hear from us through. As conversations spread across channels, someone still needs to own each issue and preserve its history. Aggregating the messages can help; ownership and follow-through are what make it useful.
 
 
 ## Use analytics to notice the people who never write in
@@ -101,7 +102,7 @@ Suppose someone starts an export, encounters an error, and never completes it. T
 We can acknowledge the failure, explain what we know, and help them finish the task. We should still check that they are affected and that another message would be useful.
 
 
-I do not want reporting a problem to be the only way a customer can get help, particularly when we already have evidence that something went wrong.
+Reporting a problem should not be the only way a customer can get help, particularly when we already have evidence that something went wrong.
 
 
 The messages that do arrive also need interpretation. A billing issue gives someone an immediate reason to contact us. A detailed feature request could come from a person who already gets considerable value, or from someone still trying to obtain the value they paid for.
@@ -110,7 +111,7 @@ The messages that do arrive also need interpretation. A billing issue gives some
 Both conversations matter. Neither tells us, by itself, how the rest of the customer base is doing.
 
 
-I want to hear from people who use the product deeply, people who get stuck, and people who quietly stop. Analytics helps us find them. Conversations help us understand what happened.
+We need to hear from people who use the product deeply, people who get stuck, and people who quietly stop. Analytics helps us find them. Conversations help us understand what happened.
 
 
 ## Build support around a path to resolution
@@ -122,16 +123,16 @@ In conversations with customer success and support leaders, I have heard very di
 Some teams use it to resolve straightforward requests immediately and send the harder cases to a human. Others distrust it enough that they would rather make a customer wait hours for a person than risk an unhelpful automated response.
 
 
-I understand the concern. I also think the outcome matters more than which kind of agent produces the answer.
+I understand the concern. The outcome matters more than which kind of agent produces the answer.
 
 
 A custom support workflow, including one built quickly with AI, can be a reasonable choice if it is **implemented well**.
 
 
-For me, that means the system can recognize its limits, escalate when necessary, preserve the customer’s context, and make it clear what happens next. If the AI keeps responding while a request that needs a human sits unattended, fast replies can coexist with very slow resolution.
+That means the system must recognize its limits, escalate when necessary, preserve the customer’s context, and make it clear what happens next. If the AI keeps responding while a request that needs a human sits unattended, fast replies can coexist with very slow resolution.
 
 
-A few things I would expect from that workflow:
+That workflow needs:
 
 - **A useful acknowledgment.** Confirm that the request has been received and explain the next step. A generic receipt is not a solution.
 - **A realistic time for the next update.** “We’ll update you by tomorrow at 3 p.m. Pacific” gives the customer something concrete. Promise an update if you cannot yet promise a resolution.
@@ -144,7 +145,7 @@ The right timing depends on the product, the issue, and the channel. A critical 
 If the user leaves, notify them through an appropriate channel when there is a useful update. Do not expect them to return at precisely the moment your team becomes available.
 
 
-I also hesitate when I hear that customers do not provide enough information for automated support to work.
+A short first message is not a reason to assume automated support cannot work.
 
 
 There are several possible reasons for a short first message. The customer may not know which details matter. They may be in a hurry. They may also have learned from previous experiences that a long explanation gets them nowhere.
@@ -162,16 +163,16 @@ A good response can build enough trust to get the details needed to help. Where 
 A support leader once challenged me on how useful CSAT, or customer satisfaction score, really is.
 
 
-I would not take that to mean we should ignore it. I would take it as a warning about what we ask the score to represent.
+The problem is asking CSAT to represent more than it can.
 
 
 CSAT usually captures a reported reaction to a particular experience. It reflects the people who answer the survey, whose experiences may differ from those who do not. Qualtrics discusses this response bias and the limited detail a single rating can capture; IBM also notes that CSAT does not provide a complete picture of a customer’s ongoing relationship with the company.<sup>[3](#source-3), [4](#source-4)</sup>
 
 
-I would put that rating beside evidence of resolution: whether the issue was resolved, how long that took, whether the customer had to repeat themselves or reopen it, and whether they could subsequently complete the task.
+Put that rating beside evidence of resolution: whether the issue was resolved, how long that took, whether the customer had to repeat themselves or reopen it, and whether they could subsequently complete the task.
 
 
-A friendly answer can earn a positive reaction. I still want to know whether it helped.
+A friendly answer can earn a positive reaction. We still need to know whether it helped.
 
 
 ## Be honest about activation, and take onboarding seriously
@@ -195,16 +196,16 @@ For an email product, connecting an account might only be preparation. Completin
 A stricter definition is useful when it better represents value. Making the bar arbitrarily higher does not make the metric more honest.
 
 
-I want us to be able to explain why the milestone matters and investigate whether people who reach it tend to continue getting value. A lower number can be useful if it reveals the part of the experience we need to improve.
+We need to explain why the milestone matters and investigate whether people who reach it tend to continue getting value. A lower number can be useful if it reveals the part of the experience we need to improve.
 
 
 Onboarding is part of that experience. It sets expectations, introduces the product, and helps someone reach the first useful result.
 
 
-I would measure completion, where people leave, how long steps take, and whether they reach that result afterward. Funnels can identify where to investigate, including the users who dropped out.<sup>[2](#source-2)</sup> A long time on a screen might indicate confusion, but it could also be expected work. The number should lead to a question.
+Measure completion, where people leave, how long steps take, and whether they reach that result afterward. Funnels can identify where to investigate, including the users who dropped out.<sup>[2](#source-2)</sup> A long time on a screen might indicate confusion, but it could also be expected work. The number should lead to a question.
 
 
-I would treat onboarding as part of delivering the product’s value from the beginning.
+Treat onboarding as part of delivering the product’s value from the beginning.
 
 
 ## Separate early value from ongoing retention
@@ -213,7 +214,7 @@ I would treat onboarding as part of delivering the product’s value from the be
 One dashboard can give the team a shared view, but it needs clear definitions and maintenance as the product changes.
 
 
-I would keep two questions visible:
+Keep two questions visible:
 
 1. Are new customers reaching value?
 2. Are established customers continuing to receive it?
@@ -221,7 +222,7 @@ I would keep two questions visible:
 For a weekly subscription, the first seven days may be especially worth examining alongside the first renewal. Later usage and renewals answer a different question: whether the product has become useful enough to keep.
 
 
-A first-week activation funnel, a daily retention curve, and a subscription renewal rate measure different things. I would put them together where useful, with labels that make those differences explicit.
+A first-week activation funnel, a daily retention curve, and a subscription renewal rate measure different things. Put them together where useful, with labels that make those differences explicit.
 
 
 For each measure, write down who is included, what action counts, when the clock starts, and which time window applies. Analytics tools require these decisions: PostHog retention, for example, distinguishes a starting event from a returning event and offers different rules for when a return counts.<sup>[5](#source-5)</sup>
@@ -239,7 +240,7 @@ This becomes particularly important when evaluating product changes.
 Suppose an onboarding bug affects people who sign up on Monday, and we fix it on Tuesday. The Monday customers still had that experience. The deployment does not erase it.
 
 
-I would record which customers were exposed, keep that group identifiable, and follow their later outcomes. Then I would compare relevant groups at the same age, accounting for other differences where possible.
+Record which customers were exposed, keep that group identifiable, and follow their later outcomes. Then compare relevant groups at the same age, accounting for other differences where possible.
 
 
 If Monday’s group has weaker Day 7 retention, that is a reason to investigate. It does not prove the bug caused the difference.
@@ -257,22 +258,22 @@ When a definition changes, record that too. Otherwise an apparent improvement ma
 There is a familiar argument that customers cannot tell you what to build. The “faster horse” example usually appears somewhere in that conversation.
 
 
-I find it more useful as a prompt for investigation.
+The useful question is what the request tells us about the customer’s problem.
 
 
-If someone asks for a faster horse, speed is one hypothesis about their problem. I would still want to understand the journey: where they are going, what makes it difficult, and what a better result would change for them.
+If someone asks for a faster horse, speed is one hypothesis about their problem. The next step is to understand the journey: where they are going, what makes it difficult, and what a better result would change for them.
 
 
 The same applies to a feature request. The request is evidence worth taking seriously. Understanding the process behind it is what gives us room to find a useful solution.
 
 
-For example, suppose a customer asks for another dashboard. Before building it, I would want to see the decision they are trying to make. They might need a new view. They might need one reliable number, a timely alert, or an existing report delivered into the workflow they already use.
+For example, suppose a customer asks for another dashboard. Before building it, look at the decision they are trying to make. They might need a new view. They might need one reliable number, a timely alert, or an existing report delivered into the workflow they already use.
 
 
 That is the kind of understanding I started developing by working beside customers.
 
 
-To make it useful for prioritization, I would want each proposed change to answer five questions:
+Each proposed change should answer five questions:
 
 1. **What is the customer trying to accomplish?** Describe the task and the process around it.
 2. **What is preventing it?** Bring an observed workflow, a conversation, or product evidence.
