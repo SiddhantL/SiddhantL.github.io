@@ -26,6 +26,4 @@ skills:
 
 Iris was an AI calendar and scheduling assistant that handled time management through natural language. Tell it "reorganize my day to give me a slow start" or "reply to Sarah about the project update" and it just did it.
 
-Built mobile-first on iOS with deep integrations into calendars, email, and meeting tools. The system combined NLP, user behavior modeling, and privacy-preserving design. End-to-end encryption, user-controlled data retention, and granular permissions.
-
 This is the project that got us into Y Combinator. We've since pivoted to Minro, but Iris was where the team came together and where we learned how to ship fast under pressure.
